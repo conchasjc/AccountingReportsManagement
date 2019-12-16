@@ -66,6 +66,23 @@ namespace AccountingReportsManagement
                 TC_VoucherReports.SelectedIndex = (int)(e.KeyValue - '1');
                 e.Handled = true;
             }
+            else if (e.KeyCode == Keys.Delete || e.KeyCode==Keys.Back)
+            {
+                if (Grid_Client.Focused == true)
+                {
+                   DialogResult res = MessageBox.Show("Delete " + Grid_Client.SelectedCells[0].Value.ToString() + " " + Grid_Client.SelectedCells[1].Value.ToString() + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            Databased deleteData = new Databased("Delete from clientsupplierentries where entryCode='" + Grid_Client.SelectedCells[0].Value.ToString() + "'");
+                            clients.Load(1);
+                        }
+                        catch
+                        { }
+                    }
+                }
+                }
         }
 
         private void Tmr_ClockTick_Tick(object sender, EventArgs e)
@@ -98,13 +115,35 @@ namespace AccountingReportsManagement
             }
             else if (Btn_UpdateClient.Text == "Save")
             {
-                Grid_Client.Enabled = true;
-                Txt_ClientAdd.Enabled = false;
-                Txt_ClientCode.Enabled = false;
-                Txt_ClientName.Enabled = false;
-                Txt_ClientTin.Enabled = false;
-                Btn_UpdateClient.Text = "Update";
-                
+                DialogResult res = MessageBox.Show("Apply Changes?", "Update Client", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    try
+                    {
+                        clients.UpdateClient(Grid_Client.SelectedCells[0].Value.ToString(), Txt_ClientCode.Text, Txt_ClientName.Text, Txt_ClientTin.Text, Txt_ClientAdd.Text);
+                        clients.Load(1);
+                        Grid_Client.Enabled = true;
+                        Txt_ClientAdd.Enabled = false;
+                        Txt_ClientCode.Enabled = false;
+                        Txt_ClientName.Enabled = false;
+                        Txt_ClientTin.Enabled = false;
+                        Btn_UpdateClient.Text = "Update";
+                    }
+                    catch (Exception ex) {
+                        MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                else if (res == DialogResult.No)
+                {
+                    
+                    Grid_Client.Enabled = true;
+                    Txt_ClientAdd.Enabled = false;
+                    Txt_ClientCode.Enabled = false;
+                    Txt_ClientName.Enabled = false;
+                    Txt_ClientTin.Enabled = false;
+                    Btn_UpdateClient.Text = "Update";
+                   
+                }
             }
         }
 
@@ -112,11 +151,24 @@ namespace AccountingReportsManagement
         {
             if (Cmb_FClientSupplier.Text == "All") {
                 Grid_Client.DataSource = clients.ComboBoxFilter("");
+                Grid_Client.Focus();
+                Grid_Client.MultiSelect = false;
+                Grid_Client.MultiSelect = true;
+                
+                Grid_Client.Rows[0].Selected = true;
+              
+
             }
             else { 
+
             Grid_Client.DataSource = clients.ComboBoxFilter(Cmb_FClientSupplier.Text.Substring(0, 2).ToString());
             Grid_Client.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-        }
+                Grid_Client.Focus();
+                Grid_Client.MultiSelect = false;
+                Grid_Client.MultiSelect = true;
+            
+                Grid_Client.Rows[0].Selected = true;
+            }
         }
         private void Btn_AddClient_Click(object sender, EventArgs e)
         {
@@ -316,19 +368,39 @@ namespace AccountingReportsManagement
 
             
         }
+        
+
         private void Grid_Client_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Txt_ClientCode.Text = Grid_Client.SelectedRows[0].Cells[0].Value.ToString();
             //Txt_ClientName.Text = Grid_Client.SelectedRows[0].Cells[1].Value.ToString();
-
             Database getInfo = new Database();
+
             getInfo.GetQuery("select * from clientsupplierentries where entryCode='" + Grid_Client.SelectedCells[0].Value.ToString() + "'");
+
             Txt_ClientCode.Text = getInfo.queryTable.Rows[0][0].ToString();
             Txt_ClientName.Text = getInfo.queryTable.Rows[0][1].ToString();
             Txt_ClientTin.Text = getInfo.queryTable.Rows[0][3].ToString();
             Txt_ClientAdd.Text = getInfo.queryTable.Rows[0][4].ToString();
+            label13.Text = Grid_Client.SelectedCells[0].Value.ToString();
         }
 
+       private void Grid_Client_SelectionChanged(object sender, EventArgs e)
+        {
+            Database getInfo = new Database();
+            try
+            {
+                getInfo.GetQuery("select * from clientsupplierentries where entryCode='" + Grid_Client.SelectedCells[0].Value.ToString() + "'");
+                Txt_ClientCode.Text = getInfo.queryTable.Rows[0][0].ToString();
+                Txt_ClientName.Text = getInfo.queryTable.Rows[0][1].ToString();
+                Txt_ClientTin.Text = getInfo.queryTable.Rows[0][3].ToString();
+                Txt_ClientAdd.Text = getInfo.queryTable.Rows[0][4].ToString();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
 

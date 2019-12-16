@@ -76,6 +76,7 @@
             this.Col_financialCond = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.Txt_AddClientAddress = new Guna.UI.WinForms.GunaTextBox();
             this.Txt_AddClientTin = new Guna.UI.WinForms.GunaTextBox();
@@ -90,7 +91,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.Cmb_FClientSupplier = new Guna.UI.WinForms.GunaComboBox();
             this.Pb_clientSearchOn = new System.Windows.Forms.PictureBox();
             this.Pb_clientSearchOff = new System.Windows.Forms.PictureBox();
             this.Txt_clientSearch = new Guna.UI.WinForms.GunaTextBox();
@@ -116,6 +116,7 @@
             this.Tmr_MenuTransitionClose = new System.Windows.Forms.Timer(this.components);
             this.Pnl_Voucher = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Cmb_FClientSupplier = new Guna.UI.WinForms.GunaComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pcb_Logo)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -638,6 +639,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.Txt_AddClientAddress);
             this.groupBox4.Controls.Add(this.Txt_AddClientTin);
@@ -656,6 +658,15 @@
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Add Client Supplier";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(62, 210);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 12);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "label13";
             // 
             // label10
             // 
@@ -836,29 +847,6 @@
             this.label11.TabIndex = 25;
             this.label11.Text = "Client Category:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // Cmb_FClientSupplier
-            // 
-            this.Cmb_FClientSupplier.BackColor = System.Drawing.Color.Transparent;
-            this.Cmb_FClientSupplier.BaseColor = System.Drawing.Color.White;
-            this.Cmb_FClientSupplier.BorderColor = System.Drawing.Color.Silver;
-            this.Cmb_FClientSupplier.BorderSize = 1;
-            this.Cmb_FClientSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Cmb_FClientSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cmb_FClientSupplier.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Cmb_FClientSupplier.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Cmb_FClientSupplier.ForeColor = System.Drawing.Color.Black;
-            this.Cmb_FClientSupplier.FormattingEnabled = true;
-            this.Cmb_FClientSupplier.Items.AddRange(new object[] {
-            "All"});
-            this.Cmb_FClientSupplier.Location = new System.Drawing.Point(105, 17);
-            this.Cmb_FClientSupplier.Name = "Cmb_FClientSupplier";
-            this.Cmb_FClientSupplier.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.Cmb_FClientSupplier.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.Cmb_FClientSupplier.Radius = 3;
-            this.Cmb_FClientSupplier.Size = new System.Drawing.Size(282, 26);
-            this.Cmb_FClientSupplier.TabIndex = 0;
-            this.Cmb_FClientSupplier.SelectedIndexChanged += new System.EventHandler(this.Cmb_FClientSupplier_SelectedIndexChanged);
             // 
             // Pb_clientSearchOn
             // 
@@ -1121,6 +1109,7 @@
             this.Grid_Client.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.Grid_Client.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_Client_CellClick);
             this.Grid_Client.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grid_Client_CellContentClick);
+            this.Grid_Client.SelectionChanged += new System.EventHandler(this.Grid_Client_SelectionChanged);
             // 
             // Pnl_MenuList
             // 
@@ -1223,6 +1212,29 @@
             this.panel2.Size = new System.Drawing.Size(1337, 30);
             this.panel2.TabIndex = 8;
             // 
+            // Cmb_FClientSupplier
+            // 
+            this.Cmb_FClientSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.Cmb_FClientSupplier.BaseColor = System.Drawing.Color.White;
+            this.Cmb_FClientSupplier.BorderColor = System.Drawing.Color.Silver;
+            this.Cmb_FClientSupplier.BorderSize = 1;
+            this.Cmb_FClientSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Cmb_FClientSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cmb_FClientSupplier.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Cmb_FClientSupplier.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Cmb_FClientSupplier.ForeColor = System.Drawing.Color.Black;
+            this.Cmb_FClientSupplier.FormattingEnabled = true;
+            this.Cmb_FClientSupplier.Items.AddRange(new object[] {
+            "All"});
+            this.Cmb_FClientSupplier.Location = new System.Drawing.Point(105, 17);
+            this.Cmb_FClientSupplier.Name = "Cmb_FClientSupplier";
+            this.Cmb_FClientSupplier.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.Cmb_FClientSupplier.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.Cmb_FClientSupplier.Radius = 3;
+            this.Cmb_FClientSupplier.Size = new System.Drawing.Size(282, 26);
+            this.Cmb_FClientSupplier.TabIndex = 0;
+            this.Cmb_FClientSupplier.SelectedIndexChanged += new System.EventHandler(this.Cmb_FClientSupplier_SelectedIndexChanged);
+            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1253,6 +1265,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Accounts)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOff)).EndInit();
@@ -1338,7 +1351,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaComboBox Cmb_ClientSupplierCategory;
-        private Guna.UI.WinForms.GunaComboBox Cmb_FClientSupplier;
         private Guna.UI.WinForms.GunaTextBox Txt_AddClientTin;
         private Guna.UI.WinForms.GunaTextBox Txt_AddClientName;
         private Guna.UI.WinForms.GunaTextBox Txt_AddClientCode;
@@ -1347,5 +1359,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button Btn_UpdateClient;
+        private System.Windows.Forms.Label label13;
+        private Guna.UI.WinForms.GunaComboBox Cmb_FClientSupplier;
     }
 }
