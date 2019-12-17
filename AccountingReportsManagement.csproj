@@ -112,6 +112,7 @@
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="MODULES\ChartofAccount.cs" />
     <Compile Include="MODULES\ClientSupplier.cs" />
     <Compile Include="MODULES\Databased.cs" />
     <Compile Include="MODULES\Database.cs" />
