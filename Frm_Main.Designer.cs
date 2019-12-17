@@ -33,11 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Pcb_Logo = new System.Windows.Forms.PictureBox();
@@ -60,23 +60,11 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Pb_SearchActive = new System.Windows.Forms.PictureBox();
-            this.Btn_UpdateAccount = new System.Windows.Forms.Button();
-            this.Btn_RemoveAccount = new System.Windows.Forms.Button();
-            this.Btn_AddAccount = new System.Windows.Forms.Button();
-            this.Lbl_PageSize = new System.Windows.Forms.Label();
-            this.Cmb_PageSize = new Guna.UI.WinForms.GunaComboBox();
-            this.Lbl_TotalAccounts = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Btn_PaginateLeft = new Guna.UI.WinForms.GunaCircleButton();
-            this.Btn_PaginateRight = new Guna.UI.WinForms.GunaCircleButton();
             this.Pb_SearchInactive = new System.Windows.Forms.PictureBox();
             this.Txt_Search = new Guna.UI.WinForms.GunaTextBox();
             this.Grid_Accounts = new Guna.UI.WinForms.GunaDataGridView();
-            this.Col_AccCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_financialCond = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.Txt_AddClientAddress = new Guna.UI.WinForms.GunaTextBox();
             this.Txt_AddClientTin = new Guna.UI.WinForms.GunaTextBox();
@@ -91,6 +79,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.Cmb_FClientSupplier = new Guna.UI.WinForms.GunaComboBox();
             this.Pb_clientSearchOn = new System.Windows.Forms.PictureBox();
             this.Pb_clientSearchOff = new System.Windows.Forms.PictureBox();
             this.Txt_clientSearch = new Guna.UI.WinForms.GunaTextBox();
@@ -116,7 +105,9 @@
             this.Tmr_MenuTransitionClose = new System.Windows.Forms.Timer(this.components);
             this.Pnl_Voucher = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Cmb_FClientSupplier = new Guna.UI.WinForms.GunaComboBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Col_AccCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_financialCond = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pcb_Logo)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -138,6 +129,7 @@
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Pnl_Voucher.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -295,9 +287,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_DateDisp.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_DateDisp.ForeColor = System.Drawing.Color.White;
-            this.Lbl_DateDisp.Location = new System.Drawing.Point(1083, 68);
+            this.Lbl_DateDisp.Location = new System.Drawing.Point(765, 68);
             this.Lbl_DateDisp.Name = "Lbl_DateDisp";
-            this.Lbl_DateDisp.Size = new System.Drawing.Size(148, 28);
+            this.Lbl_DateDisp.Size = new System.Drawing.Size(466, 28);
             this.Lbl_DateDisp.TabIndex = 3;
             this.Lbl_DateDisp.Text = "MM DD YYYY, DDDD";
             this.Lbl_DateDisp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -331,19 +323,8 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.Pb_SearchActive);
-            this.tabPage2.Controls.Add(this.Btn_UpdateAccount);
-            this.tabPage2.Controls.Add(this.Btn_RemoveAccount);
-            this.tabPage2.Controls.Add(this.Btn_AddAccount);
-            this.tabPage2.Controls.Add(this.Lbl_PageSize);
-            this.tabPage2.Controls.Add(this.Cmb_PageSize);
-            this.tabPage2.Controls.Add(this.Lbl_TotalAccounts);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.Btn_PaginateLeft);
-            this.tabPage2.Controls.Add(this.Btn_PaginateRight);
-            this.tabPage2.Controls.Add(this.Pb_SearchInactive);
-            this.tabPage2.Controls.Add(this.Txt_Search);
             this.tabPage2.Controls.Add(this.Grid_Accounts);
+            this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Location = new System.Drawing.Point(4, 28);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -356,159 +337,20 @@
             // 
             this.Pb_SearchActive.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton2;
             this.Pb_SearchActive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pb_SearchActive.Location = new System.Drawing.Point(394, 27);
+            this.Pb_SearchActive.Location = new System.Drawing.Point(919, 22);
             this.Pb_SearchActive.Name = "Pb_SearchActive";
-            this.Pb_SearchActive.Size = new System.Drawing.Size(21, 21);
+            this.Pb_SearchActive.Size = new System.Drawing.Size(22, 22);
             this.Pb_SearchActive.TabIndex = 12;
             this.Pb_SearchActive.TabStop = false;
             this.Pb_SearchActive.Visible = false;
-            // 
-            // Btn_UpdateAccount
-            // 
-            this.Btn_UpdateAccount.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.Refresh_icon;
-            this.Btn_UpdateAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_UpdateAccount.Location = new System.Drawing.Point(930, 500);
-            this.Btn_UpdateAccount.Name = "Btn_UpdateAccount";
-            this.Btn_UpdateAccount.Size = new System.Drawing.Size(40, 40);
-            this.Btn_UpdateAccount.TabIndex = 11;
-            this.Btn_UpdateAccount.UseVisualStyleBackColor = true;
-            // 
-            // Btn_RemoveAccount
-            // 
-            this.Btn_RemoveAccount.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.close_blue1;
-            this.Btn_RemoveAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_RemoveAccount.Location = new System.Drawing.Point(930, 454);
-            this.Btn_RemoveAccount.Name = "Btn_RemoveAccount";
-            this.Btn_RemoveAccount.Size = new System.Drawing.Size(40, 40);
-            this.Btn_RemoveAccount.TabIndex = 10;
-            this.Btn_RemoveAccount.UseVisualStyleBackColor = true;
-            // 
-            // Btn_AddAccount
-            // 
-            this.Btn_AddAccount.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.add_blue1;
-            this.Btn_AddAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Btn_AddAccount.Location = new System.Drawing.Point(930, 408);
-            this.Btn_AddAccount.Name = "Btn_AddAccount";
-            this.Btn_AddAccount.Size = new System.Drawing.Size(40, 40);
-            this.Btn_AddAccount.TabIndex = 9;
-            this.Btn_AddAccount.UseVisualStyleBackColor = true;
-            this.Btn_AddAccount.Click += new System.EventHandler(this.Btn_AddAccount_Click);
-            // 
-            // Lbl_PageSize
-            // 
-            this.Lbl_PageSize.AutoSize = true;
-            this.Lbl_PageSize.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_PageSize.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.Lbl_PageSize.Location = new System.Drawing.Point(677, 34);
-            this.Lbl_PageSize.Name = "Lbl_PageSize";
-            this.Lbl_PageSize.Size = new System.Drawing.Size(100, 14);
-            this.Lbl_PageSize.TabIndex = 8;
-            this.Lbl_PageSize.Text = "Items per Page:";
-            // 
-            // Cmb_PageSize
-            // 
-            this.Cmb_PageSize.BackColor = System.Drawing.Color.Transparent;
-            this.Cmb_PageSize.BaseColor = System.Drawing.Color.White;
-            this.Cmb_PageSize.BorderColor = System.Drawing.Color.Silver;
-            this.Cmb_PageSize.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Cmb_PageSize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cmb_PageSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cmb_PageSize.FocusedColor = System.Drawing.Color.Empty;
-            this.Cmb_PageSize.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Cmb_PageSize.ForeColor = System.Drawing.Color.Black;
-            this.Cmb_PageSize.FormattingEnabled = true;
-            this.Cmb_PageSize.Items.AddRange(new object[] {
-            "ALL",
-            "10",
-            "50",
-            "100",
-            "200"});
-            this.Cmb_PageSize.Location = new System.Drawing.Point(783, 27);
-            this.Cmb_PageSize.Name = "Cmb_PageSize";
-            this.Cmb_PageSize.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Cmb_PageSize.OnHoverItemForeColor = System.Drawing.Color.Black;
-            this.Cmb_PageSize.Size = new System.Drawing.Size(127, 26);
-            this.Cmb_PageSize.TabIndex = 7;
-            // 
-            // Lbl_TotalAccounts
-            // 
-            this.Lbl_TotalAccounts.AutoSize = true;
-            this.Lbl_TotalAccounts.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Lbl_TotalAccounts.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.Lbl_TotalAccounts.Location = new System.Drawing.Point(34, 565);
-            this.Lbl_TotalAccounts.Name = "Lbl_TotalAccounts";
-            this.Lbl_TotalAccounts.Size = new System.Drawing.Size(94, 12);
-            this.Lbl_TotalAccounts.TabIndex = 6;
-            this.Lbl_TotalAccounts.Text = "Number Of Items:";
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkRed;
-            this.label1.Location = new System.Drawing.Point(793, 554);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 33);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Page 1 of 3";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Btn_PaginateLeft
-            // 
-            this.Btn_PaginateLeft.Animated = true;
-            this.Btn_PaginateLeft.AnimationHoverSpeed = 0.07F;
-            this.Btn_PaginateLeft.AnimationSpeed = 0.03F;
-            this.Btn_PaginateLeft.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.Btn_PaginateLeft.BorderColor = System.Drawing.Color.Black;
-            this.Btn_PaginateLeft.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_PaginateLeft.FocusedColor = System.Drawing.Color.Empty;
-            this.Btn_PaginateLeft.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_PaginateLeft.ForeColor = System.Drawing.Color.White;
-            this.Btn_PaginateLeft.Image = null;
-            this.Btn_PaginateLeft.ImageSize = new System.Drawing.Size(52, 52);
-            this.Btn_PaginateLeft.Location = new System.Drawing.Point(752, 554);
-            this.Btn_PaginateLeft.Name = "Btn_PaginateLeft";
-            this.Btn_PaginateLeft.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(68)))));
-            this.Btn_PaginateLeft.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Btn_PaginateLeft.OnHoverForeColor = System.Drawing.Color.White;
-            this.Btn_PaginateLeft.OnHoverImage = null;
-            this.Btn_PaginateLeft.OnPressedColor = System.Drawing.Color.Black;
-            this.Btn_PaginateLeft.Size = new System.Drawing.Size(35, 33);
-            this.Btn_PaginateLeft.TabIndex = 4;
-            this.Btn_PaginateLeft.Text = "<";
-            this.Btn_PaginateLeft.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
-            // 
-            // Btn_PaginateRight
-            // 
-            this.Btn_PaginateRight.Animated = true;
-            this.Btn_PaginateRight.AnimationHoverSpeed = 0.07F;
-            this.Btn_PaginateRight.AnimationSpeed = 0.03F;
-            this.Btn_PaginateRight.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(149)))), ((int)(((byte)(68)))));
-            this.Btn_PaginateRight.BorderColor = System.Drawing.Color.Black;
-            this.Btn_PaginateRight.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_PaginateRight.FocusedColor = System.Drawing.Color.Empty;
-            this.Btn_PaginateRight.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_PaginateRight.ForeColor = System.Drawing.Color.White;
-            this.Btn_PaginateRight.Image = null;
-            this.Btn_PaginateRight.ImageSize = new System.Drawing.Size(52, 52);
-            this.Btn_PaginateRight.Location = new System.Drawing.Point(876, 554);
-            this.Btn_PaginateRight.Name = "Btn_PaginateRight";
-            this.Btn_PaginateRight.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(178)))), ((int)(((byte)(119)))));
-            this.Btn_PaginateRight.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Btn_PaginateRight.OnHoverForeColor = System.Drawing.Color.White;
-            this.Btn_PaginateRight.OnHoverImage = null;
-            this.Btn_PaginateRight.OnPressedColor = System.Drawing.Color.Black;
-            this.Btn_PaginateRight.Size = new System.Drawing.Size(35, 33);
-            this.Btn_PaginateRight.TabIndex = 3;
-            this.Btn_PaginateRight.Text = ">";
-            this.Btn_PaginateRight.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             // 
             // Pb_SearchInactive
             // 
             this.Pb_SearchInactive.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton;
             this.Pb_SearchInactive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pb_SearchInactive.Location = new System.Drawing.Point(394, 27);
+            this.Pb_SearchInactive.Location = new System.Drawing.Point(919, 22);
             this.Pb_SearchInactive.Name = "Pb_SearchInactive";
-            this.Pb_SearchInactive.Size = new System.Drawing.Size(21, 21);
+            this.Pb_SearchInactive.Size = new System.Drawing.Size(22, 22);
             this.Pb_SearchInactive.TabIndex = 2;
             this.Pb_SearchInactive.TabStop = false;
             // 
@@ -522,7 +364,7 @@
             this.Txt_Search.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.Txt_Search.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Txt_Search.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.Txt_Search.Location = new System.Drawing.Point(32, 23);
+            this.Txt_Search.Location = new System.Drawing.Point(559, 19);
             this.Txt_Search.Name = "Txt_Search";
             this.Txt_Search.PasswordChar = '\0';
             this.Txt_Search.Size = new System.Drawing.Size(387, 28);
@@ -566,7 +408,7 @@
             this.Grid_Accounts.DefaultCellStyle = dataGridViewCellStyle4;
             this.Grid_Accounts.EnableHeadersVisualStyles = false;
             this.Grid_Accounts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(222)))), ((int)(((byte)(218)))));
-            this.Grid_Accounts.Location = new System.Drawing.Point(32, 68);
+            this.Grid_Accounts.Location = new System.Drawing.Point(26, 72);
             this.Grid_Accounts.Name = "Grid_Accounts";
             this.Grid_Accounts.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -580,7 +422,7 @@
             this.Grid_Accounts.RowHeadersVisible = false;
             this.Grid_Accounts.RowTemplate.Height = 21;
             this.Grid_Accounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Accounts.Size = new System.Drawing.Size(879, 461);
+            this.Grid_Accounts.Size = new System.Drawing.Size(387, 500);
             this.Grid_Accounts.TabIndex = 0;
             this.Grid_Accounts.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Teal;
             this.Grid_Accounts.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
@@ -605,25 +447,6 @@
             this.Grid_Accounts.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
             this.Grid_Accounts.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             // 
-            // Col_AccCode
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Col_AccCode.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Col_AccCode.DividerWidth = 1;
-            this.Col_AccCode.FillWeight = 35.53299F;
-            this.Col_AccCode.HeaderText = "Account Code";
-            this.Col_AccCode.Name = "Col_AccCode";
-            this.Col_AccCode.ReadOnly = true;
-            this.Col_AccCode.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Col_financialCond
-            // 
-            this.Col_financialCond.FillWeight = 164.467F;
-            this.Col_financialCond.HeaderText = "Statement of Financial Condition (Account Title)";
-            this.Col_financialCond.Name = "Col_financialCond";
-            this.Col_financialCond.ReadOnly = true;
-            this.Col_financialCond.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.groupBox4);
@@ -639,7 +462,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.Txt_AddClientAddress);
             this.groupBox4.Controls.Add(this.Txt_AddClientTin);
@@ -658,15 +480,6 @@
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Add Client Supplier";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(62, 210);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 12);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "label13";
             // 
             // label10
             // 
@@ -847,6 +660,29 @@
             this.label11.TabIndex = 25;
             this.label11.Text = "Client Category:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // Cmb_FClientSupplier
+            // 
+            this.Cmb_FClientSupplier.BackColor = System.Drawing.Color.Transparent;
+            this.Cmb_FClientSupplier.BaseColor = System.Drawing.Color.White;
+            this.Cmb_FClientSupplier.BorderColor = System.Drawing.Color.Silver;
+            this.Cmb_FClientSupplier.BorderSize = 1;
+            this.Cmb_FClientSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.Cmb_FClientSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Cmb_FClientSupplier.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Cmb_FClientSupplier.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.Cmb_FClientSupplier.ForeColor = System.Drawing.Color.Black;
+            this.Cmb_FClientSupplier.FormattingEnabled = true;
+            this.Cmb_FClientSupplier.Items.AddRange(new object[] {
+            "All"});
+            this.Cmb_FClientSupplier.Location = new System.Drawing.Point(105, 17);
+            this.Cmb_FClientSupplier.Name = "Cmb_FClientSupplier";
+            this.Cmb_FClientSupplier.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            this.Cmb_FClientSupplier.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.Cmb_FClientSupplier.Radius = 3;
+            this.Cmb_FClientSupplier.Size = new System.Drawing.Size(282, 26);
+            this.Cmb_FClientSupplier.TabIndex = 0;
+            this.Cmb_FClientSupplier.SelectedIndexChanged += new System.EventHandler(this.Cmb_FClientSupplier_SelectedIndexChanged);
             // 
             // Pb_clientSearchOn
             // 
@@ -1212,28 +1048,36 @@
             this.panel2.Size = new System.Drawing.Size(1337, 30);
             this.panel2.TabIndex = 8;
             // 
-            // Cmb_FClientSupplier
+            // groupBox5
             // 
-            this.Cmb_FClientSupplier.BackColor = System.Drawing.Color.Transparent;
-            this.Cmb_FClientSupplier.BaseColor = System.Drawing.Color.White;
-            this.Cmb_FClientSupplier.BorderColor = System.Drawing.Color.Silver;
-            this.Cmb_FClientSupplier.BorderSize = 1;
-            this.Cmb_FClientSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.Cmb_FClientSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Cmb_FClientSupplier.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Cmb_FClientSupplier.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.Cmb_FClientSupplier.ForeColor = System.Drawing.Color.Black;
-            this.Cmb_FClientSupplier.FormattingEnabled = true;
-            this.Cmb_FClientSupplier.Items.AddRange(new object[] {
-            "All"});
-            this.Cmb_FClientSupplier.Location = new System.Drawing.Point(105, 17);
-            this.Cmb_FClientSupplier.Name = "Cmb_FClientSupplier";
-            this.Cmb_FClientSupplier.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            this.Cmb_FClientSupplier.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.Cmb_FClientSupplier.Radius = 3;
-            this.Cmb_FClientSupplier.Size = new System.Drawing.Size(282, 26);
-            this.Cmb_FClientSupplier.TabIndex = 0;
-            this.Cmb_FClientSupplier.SelectedIndexChanged += new System.EventHandler(this.Cmb_FClientSupplier_SelectedIndexChanged);
+            this.groupBox5.Controls.Add(this.Pb_SearchInactive);
+            this.groupBox5.Controls.Add(this.Txt_Search);
+            this.groupBox5.Controls.Add(this.Pb_SearchActive);
+            this.groupBox5.Location = new System.Drawing.Point(25, 8);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(952, 58);
+            this.groupBox5.TabIndex = 13;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
+            // Col_AccCode
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Col_AccCode.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Col_AccCode.DividerWidth = 1;
+            this.Col_AccCode.FillWeight = 35.53299F;
+            this.Col_AccCode.HeaderText = "Account Code";
+            this.Col_AccCode.Name = "Col_AccCode";
+            this.Col_AccCode.ReadOnly = true;
+            this.Col_AccCode.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Col_financialCond
+            // 
+            this.Col_financialCond.FillWeight = 164.467F;
+            this.Col_financialCond.HeaderText = "Statement of Financial Condition       (Account Title)";
+            this.Col_financialCond.Name = "Col_financialCond";
+            this.Col_financialCond.ReadOnly = true;
+            this.Col_financialCond.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // Frm_Main
             // 
@@ -1259,13 +1103,11 @@
             this.menuStrip1.PerformLayout();
             this.TC_VoucherReports.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchActive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchInactive)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Accounts)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOff)).EndInit();
@@ -1277,6 +1119,7 @@
             this.panel4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.Pnl_Voucher.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1304,23 +1147,12 @@
         private Guna.UI.WinForms.GunaDataGridView Grid_Accounts;
         private Guna.UI.WinForms.GunaTextBox Txt_Search;
         private System.Windows.Forms.PictureBox Pb_SearchInactive;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_AccCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col_financialCond;
-        private Guna.UI.WinForms.GunaCircleButton Btn_PaginateLeft;
-        private Guna.UI.WinForms.GunaCircleButton Btn_PaginateRight;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label Lbl_TotalAccounts;
-        private Guna.UI.WinForms.GunaComboBox Cmb_PageSize;
-        private System.Windows.Forms.Label Lbl_PageSize;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripMenuItem conectDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backupDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem restoreDatabaseToolStripMenuItem;
-        private System.Windows.Forms.Button Btn_UpdateAccount;
-        private System.Windows.Forms.Button Btn_RemoveAccount;
-        private System.Windows.Forms.Button Btn_AddAccount;
         private System.Windows.Forms.PictureBox Pb_MenuBar;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label Lbl_CategoryTitle;
@@ -1359,7 +1191,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button Btn_UpdateClient;
-        private System.Windows.Forms.Label label13;
         private Guna.UI.WinForms.GunaComboBox Cmb_FClientSupplier;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_AccCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_financialCond;
     }
 }

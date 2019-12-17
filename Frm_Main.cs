@@ -13,12 +13,12 @@ namespace AccountingReportsManagement
         Database account = new Database();
         Database clientSupplier = new Database();
         ClientSupplier clients = new ClientSupplier();
-   
+
         //-----------------------------------------INITIALIZE FORM---------------------------------------------//
         public Frm_Main()
         {
             InitializeComponent();
-          
+
         }
 
         private void Frm_Main_Load(object sender, EventArgs e)
@@ -36,10 +36,10 @@ namespace AccountingReportsManagement
                     Grid_Accounts.Rows.Add(account.queryTable.Rows[i].ItemArray[0].ToString(), account.queryTable.Rows[i].ItemArray[1].ToString());
                 }
                 //End of Account Entries
-             
+
                 //Load Client Supplier Data
                 Grid_Client.DataSource = clients.Load(1);
-                Grid_Client.Columns[0].AutoSizeMode= DataGridViewAutoSizeColumnMode.AllCells;
+                Grid_Client.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 clientSupplier.GetQuery("Select * from clientsuppliercategory;");
                 //End of Client Supplier
 
@@ -49,7 +49,7 @@ namespace AccountingReportsManagement
                     Cmb_FClientSupplier.Items.Add(clientSupplier.queryTable.Rows[i].ItemArray[0].ToString() + " - " + clientSupplier.queryTable.Rows[i].ItemArray[1].ToString());
 
                 }
-                
+
             }
 
             catch (Exception ex)
@@ -66,11 +66,11 @@ namespace AccountingReportsManagement
                 TC_VoucherReports.SelectedIndex = (int)(e.KeyValue - '1');
                 e.Handled = true;
             }
-            else if (e.KeyCode == Keys.Delete || e.KeyCode==Keys.Back)
+            else if (e.KeyCode == Keys.Delete || e.KeyCode == Keys.Back)
             {
                 if (Grid_Client.Focused == true)
                 {
-                   DialogResult res = MessageBox.Show("Delete " + Grid_Client.SelectedCells[0].Value.ToString() + " " + Grid_Client.SelectedCells[1].Value.ToString() + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult res = MessageBox.Show("Delete " + Grid_Client.SelectedCells[0].Value.ToString() + " " + Grid_Client.SelectedCells[1].Value.ToString() + "?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (res == DialogResult.Yes)
                     {
                         try
@@ -82,7 +82,16 @@ namespace AccountingReportsManagement
                         { }
                     }
                 }
-                }
+            }
+            else if (e.KeyCode == Keys.Escape && Txt_ClientCode.Enabled==true || Txt_ClientName.Enabled == true)
+            {
+                Grid_Client.Enabled = true;
+                Txt_ClientAdd.Enabled = false;
+                Txt_ClientCode.Enabled = false;
+                Txt_ClientName.Enabled = false;
+                Txt_ClientTin.Enabled = false;
+                Btn_UpdateClient.Text = "Update";
+            }
         }
 
         private void Tmr_ClockTick_Tick(object sender, EventArgs e)
@@ -382,7 +391,7 @@ namespace AccountingReportsManagement
             Txt_ClientName.Text = getInfo.queryTable.Rows[0][1].ToString();
             Txt_ClientTin.Text = getInfo.queryTable.Rows[0][3].ToString();
             Txt_ClientAdd.Text = getInfo.queryTable.Rows[0][4].ToString();
-            label13.Text = Grid_Client.SelectedCells[0].Value.ToString();
+           
         }
 
        private void Grid_Client_SelectionChanged(object sender, EventArgs e)
@@ -400,6 +409,11 @@ namespace AccountingReportsManagement
             {
 
             }
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
