@@ -106,7 +106,7 @@ namespace AccountingReportsManagement
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private CashVoucher CashVoucher1;
 
-        public PettyCashReport PettyCashReport1 { get; private set; }
+    
     }
 }
 

@@ -16,14 +16,14 @@ namespace AccountingReportsManagement.REPORTS {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class PettyCashReport : ReportClass {
+    public class petty : ReportClass {
         
-        public PettyCashReport() {
+        public petty() {
         }
         
         public override string ResourceName {
             get {
-                return "PettyCashReport.rpt";
+                return "petty.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace AccountingReportsManagement.REPORTS {
         
         public override string FullResourceName {
             get {
-                return "AccountingReportsManagement.REPORTS.PettyCashReport.rpt";
+                return "AccountingReportsManagement.REPORTS.petty.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace AccountingReportsManagement.REPORTS {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedPettyCashReport : Component, ICachedReport {
+    public class Cachedpetty : Component, ICachedReport {
         
-        public CachedPettyCashReport() {
+        public Cachedpetty() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace AccountingReportsManagement.REPORTS {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            PettyCashReport rpt = new PettyCashReport();
+            petty rpt = new petty();
             rpt.Site = this.Site;
             return rpt;
         }

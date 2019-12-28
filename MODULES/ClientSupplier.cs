@@ -11,7 +11,7 @@ namespace AccountingReportsManagement.MODULES
     {
         //INITIALIZE INSTANCE CLASS/OBJECTS/PROPERTIES
         public BindingSource dataBind = new BindingSource();
-        BindingSource bd = new BindingSource();
+        readonly BindingSource bd = new BindingSource();
         //END OF INSTANCE CLASS/OBJECTS/PROPERTIES
 
 
@@ -28,7 +28,7 @@ namespace AccountingReportsManagement.MODULES
         {
             if (columnIndex ==1)
             {
-                Databased db = new Databased("Select entryCode as Code, entryName as Client_Name from clientsupplierentries");
+                Databased db = new Databased("Select entryCode as Code, entryName as ClientName from clientsupplierentries");
                 db.GetData();
                 dataBind.DataSource = db.queryTable.Tables[0];
             }
@@ -51,14 +51,15 @@ namespace AccountingReportsManagement.MODULES
         }
         //END OF CRUD METHODS
 
-
-
+    
+           
 
         //FILTERING METHODS
         public object ComboBoxFilter(string textFilter)
         {
            dataBind.Filter = "convert([Code],'System.String') LIKE '" +textFilter + "%'";
            return dataBind;
+         
         }
        
         public object TextBoxFilter(string textFilter)
@@ -70,8 +71,9 @@ namespace AccountingReportsManagement.MODULES
               bd.Filter = "convert([Client_Name],'System.String') LIKE '%" + textFilter + "%' ";
             }
             return dataBind;
+            
         }
         //END OF FILTERING METHODS
-        
+       
     }
 }
