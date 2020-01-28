@@ -13,9 +13,10 @@ namespace AccountingReportsManagement
         readonly Database  clientSupplier = new Database();
         readonly ClientSupplier clients = new ClientSupplier();
         readonly ChartofAccount accounts = new ChartofAccount();
+        readonly CreateVoucherClass Payee = new CreateVoucherClass();
         //END OF INITIALIZATION
 
-
+        BindingSource bs = new BindingSource();
 
         //-----------------------------------------INITIALIZE FORM---------------------------------------------//
         public Frm_Main()
@@ -33,8 +34,12 @@ namespace AccountingReportsManagement
             }
             try
             {
+                bs.DataSource = Payee.viewVouchers();
+                Grid_ViewPayee.DataSource = bs;
+                Grid_ViewPayee.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
+                Grid_ViewPayee.RowsDefaultCellStyle.Padding = new Padding(3);
                 //Load Data for Account Entries
-                
+
                 Grid_Accounts.DataSource = accounts.Load(1);
                 Grid_Accounts.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 Grid_Accounts.Columns[0].DefaultCellStyle.Font = new Font(Grid_Accounts.Font, FontStyle.Bold);
@@ -99,10 +104,10 @@ namespace AccountingReportsManagement
                 Btn_UpdateClient.Text = "Update";
             }
         }
-
+  
         private void Tmr_ClockTick_Tick(object sender, EventArgs e)
         {
-           
+            Grid_ViewPayee.Refresh();
             Lbl_ClockDisp.Text = DateTime.Now.ToString("h:mm:ss tt");
             int x = 0;
             try {
@@ -250,7 +255,7 @@ namespace AccountingReportsManagement
         private void Grid_Client_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Database getInfo = new Database();
-            getInfo.GetQuery("select * from clientsupplierentries where entryCode='" + Grid_Client.SelectedCells[0].Value.ToString() + "'");
+            getInfo.GetQuery($"select * from clientsupplierentries where entryCode='{Grid_Client.SelectedCells[0].Value.ToString()}'");
             Txt_ClientCode.Text = getInfo.queryTable.Rows[0][0].ToString();
             Txt_ClientName.Text = getInfo.queryTable.Rows[0][1].ToString();
             Txt_ClientTin.Text = getInfo.queryTable.Rows[0][3].ToString();
@@ -262,7 +267,7 @@ namespace AccountingReportsManagement
             Database getInfo = new Database();
             try
             {
-                getInfo.GetQuery("select * from clientsupplierentries where entryCode='" + Grid_Client.SelectedCells[0].Value.ToString() + "'");
+                getInfo.GetQuery($"select * from clientsupplierentries where entryCode='{ Grid_Client.SelectedCells[0].Value.ToString()}'");
                 Txt_ClientCode.Text = getInfo.queryTable.Rows[0][0].ToString();
                 Txt_ClientName.Text = getInfo.queryTable.Rows[0][1].ToString();
                 Txt_ClientTin.Text = getInfo.queryTable.Rows[0][3].ToString();
@@ -452,6 +457,9 @@ namespace AccountingReportsManagement
                 accounts.AddAccounts(Cmb_AddAccSubCategory.Text, Txt_AddAccountCode.Text, Txt_AddAccountTitle.Text,Cmb_AddAccCategory.Text);
                 Txt_AddAccountCode.Focus();
                 accounts.Load(1);
+                Grid_Accounts.Rows[Grid_Accounts.Rows.Count-2].Selected = false;
+                Grid_Accounts.Rows[Grid_Accounts.Rows.Count - 1].Selected = true;
+            
             }
             catch(Exception ex)
             {
@@ -608,11 +616,18 @@ namespace AccountingReportsManagement
                     Cmb_AddAccSubCategory.Items.Add("7900 PROVISION FOR INCOME TAX");
                     Cmb_AddAccSubCategory.Items.Add("8000 OTHER COMPREHENSIVE INCOME");
                     break;
-
+                   
             }
 
         }
 
+        private void gunaAdvenceTileButton1_Click(object sender, EventArgs e)
+        {
+            CreateVoucher cv = new CreateVoucher();
+            cv.Show();
+        }
+
+   
 
 
 

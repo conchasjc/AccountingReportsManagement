@@ -68,7 +68,7 @@ namespace AccountingReportsManagement.MODULES
            bd.Filter = "convert([Code],'System.String') LIKE '" + textFilter + "%' ";
            if (bd.Count==0) 
             {
-              bd.Filter = "convert([Client_Name],'System.String') LIKE '%" + textFilter + "%' ";
+              bd.Filter = "convert([ClientName],'System.String') LIKE '%" + textFilter + "%' ";
             }
             return dataBind;
             

@@ -12,6 +12,23 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>Y:\AccountingManagement\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,6 +51,24 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>kmtioriglogo1.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>CCB3ACB16E8FC2782AEBDC3EEB0660F3BE346FD3</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AccountingReportsManagement_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
@@ -79,6 +114,7 @@
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Messaging" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
@@ -93,6 +129,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateVoucher.Designer.cs">
+      <DependentUpon>CreateVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_ChartofAccount_add.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,15 +159,30 @@
     <Compile Include="Frm_Main.Designer.cs">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_PrintForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_PrintForm.Designer.cs">
+      <DependentUpon>Frm_PrintForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MODULES\ChartofAccount.cs" />
     <Compile Include="MODULES\ClientSupplier.cs" />
+    <Compile Include="MODULES\CreateVoucherClass.cs" />
     <Compile Include="MODULES\Databased.cs" />
     <Compile Include="MODULES\Database.cs" />
+    <Compile Include="MODULES\NumToWords.cs" />
+    <Compile Include="MODULES\Voucher.cs" />
     <Compile Include="REPORTS\CashVoucher.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>CashVoucher.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="REPORTS\CheckVouch.cs">
+      <DependentUpon>CheckVouch.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Frm_ChartofAccnt.cs">
       <SubType>Form</SubType>
@@ -139,12 +196,6 @@
     <Compile Include="Frm_PrintVoucher.Designer.cs">
       <DependentUpon>Frm_PrintVoucher.cs</DependentUpon>
     </Compile>
-    <Compile Include="REPORTS\CheckVoucher.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CheckVoucher.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="REPORTS\petty.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -153,6 +204,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CreateVoucher.resx">
+      <DependentUpon>CreateVoucher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_ChartofAccount_add.resx">
       <DependentUpon>Frm_ChartofAccount_add.cs</DependentUpon>
     </EmbeddedResource>
@@ -165,19 +219,22 @@
     <EmbeddedResource Include="Frm_Main.resx">
       <DependentUpon>Frm_Main.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_PrintForm.resx">
+      <DependentUpon>Frm_PrintForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="REPORTS\CashVoucher.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CashVoucher.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTS\CheckVouch.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CheckVouch.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_ChartofAccnt.resx">
       <DependentUpon>Frm_ChartofAccnt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_PrintVoucher.resx">
       <DependentUpon>Frm_PrintVoucher.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="REPORTS\CheckVoucher.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CheckVoucher.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="REPORTS\petty.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -193,7 +250,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="AccountingReportsManagement_1_TemporaryKey.pfx" />
+    <None Include="AccountingReportsManagement_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -212,6 +272,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="kmtioriglogo1.ico" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\Awicons-Vista-Artistic-2-Hot-Printer.ico" />
+    <None Include="Resources\icons8_chevron_left_48px.png" />
+    <None Include="Resources\icons8_chevron_right_48px.png" />
+    <None Include="Resources\icons8_new_ticket_160px.png" />
+    <None Include="Resources\PDF-download-icon.png" />
+    <None Include="Resources\print-png-image-1.png" />
+    <None Include="Resources\Medical-Billing-GREEN.png" />
     <None Include="Resources\searchButton2.png" />
     <None Include="Resources\barmenu.png" />
     <None Include="Resources\add_blue1.png" />
@@ -226,9 +294,23 @@
     <None Include="Resources\logo.png" />
     <None Include="Resources\icons8-database-administrator-64.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -35,7 +35,7 @@ namespace AccountingReportsManagement
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.CashVoucher1 = new AccountingReportsManagement.REPORTS.CashVoucher();
+            this.CheckVouch1 = new AccountingReportsManagement.REPORTS.CheckVouch();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,13 +70,9 @@ namespace AccountingReportsManagement
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 24);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.ReportSource = this.CashVoucher1;
-            this.crystalReportViewer1.ReuseParameterValuesOnRefresh = true;
-            this.crystalReportViewer1.ShowLogo = false;
-            this.crystalReportViewer1.ShowParameterPanelButton = false;
+            this.crystalReportViewer1.ReportSource = this.CheckVouch1;
             this.crystalReportViewer1.Size = new System.Drawing.Size(860, 576);
-            this.crystalReportViewer1.TabIndex = 3;
-            this.crystalReportViewer1.Load += new System.EventHandler(this.crystalReportViewer1_Load);
+            this.crystalReportViewer1.TabIndex = 1;
             // 
             // Frm_PrintVoucher
             // 
@@ -104,9 +100,7 @@ namespace AccountingReportsManagement
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private CashVoucher CashVoucher1;
-
-    
+        private CheckVouch CheckVouch1;
     }
 }
 

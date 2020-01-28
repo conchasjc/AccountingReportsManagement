@@ -16,14 +16,14 @@ namespace AccountingReportsManagement.REPORTS {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CheckVoucher : ReportClass {
+    public class CheckVouch : ReportClass {
         
-        public CheckVoucher() {
+        public CheckVouch() {
         }
         
         public override string ResourceName {
             get {
-                return "CheckVoucher.rpt";
+                return "CheckVouch.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace AccountingReportsManagement.REPORTS {
         
         public override string FullResourceName {
             get {
-                return "AccountingReportsManagement.REPORTS.CheckVoucher.rpt";
+                return "AccountingReportsManagement.REPORTS.CheckVouch.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace AccountingReportsManagement.REPORTS {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -90,9 +90,9 @@ namespace AccountingReportsManagement.REPORTS {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCheckVoucher : Component, ICachedReport {
+    public class CachedCheckVouch : Component, ICachedReport {
         
-        public CachedCheckVoucher() {
+        public CachedCheckVouch() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace AccountingReportsManagement.REPORTS {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CheckVoucher rpt = new CheckVoucher();
+            CheckVouch rpt = new CheckVouch();
             rpt.Site = this.Site;
             return rpt;
         }

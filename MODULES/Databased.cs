@@ -128,7 +128,7 @@ namespace AccountingReportsManagement
         {
             MySqlDataAdapter sqlAdapter = new MySqlDataAdapter(Command);
             sqlAdapter.Fill(queryTable);
-            return queryTable;
+            return queryTable.Tables[0];
         }
 
         public void AddData()

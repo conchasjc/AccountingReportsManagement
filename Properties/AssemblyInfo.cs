@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AccountingReportsManagement")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("KMTI Accounting Reports Management System")]
+[assembly: AssemblyDescription("Software intended for the admin of Kusakabe & Maeno Tech Inc.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Kusakabe & Maeno Tech Inc")]
 [assembly: AssemblyProduct("AccountingReportsManagement")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
