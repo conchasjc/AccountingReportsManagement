@@ -33,7 +33,7 @@ namespace AccountingReportsManagement
                 Cmb_SubCategory.Enabled = false;
             }
             try
-            {
+           {
                 bs.DataSource = Payee.viewVouchers();
                 Grid_ViewPayee.DataSource = bs;
                 Grid_ViewPayee.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
@@ -62,9 +62,9 @@ namespace AccountingReportsManagement
                     Cmb_ClientSupplierCategory.Items.Add(clientSupplier.queryTable.Rows[i].ItemArray[0].ToString() + " - " + clientSupplier.queryTable.Rows[i].ItemArray[1].ToString());
                     Cmb_FClientSupplier.Items.Add(clientSupplier.queryTable.Rows[i].ItemArray[0].ToString() + " - " + clientSupplier.queryTable.Rows[i].ItemArray[1].ToString());
                 }
-            }
-            catch (Exception ex)
-            {
+          }
+           catch (Exception ex)
+           {
                 MessageBox.Show(ex.Message);
             }
         }
@@ -627,8 +627,15 @@ namespace AccountingReportsManagement
             cv.Show();
         }
 
-   
+        private void gunaTextBox1_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            label21.Text = gunaTextBox1.Text;
+        }
 
+        private void gunaTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            label21.Text = gunaTextBox1.Text;
+        }
 
 
 

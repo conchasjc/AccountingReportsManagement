@@ -1,41 +1,41 @@
 ﻿using AccountingReportsManagement.MODULES;
+using AccountingReportsManagement.MODULES.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using AccountingReportsManagement.REPORTS;
-using System.IO;
 
 namespace AccountingReportsManagement
 {
+
+
     public partial class CreateVoucher : Form
     {
+        int x = 0;             //PANEL DEFAULT LOCATION
+        int noOfVoucher;
+       
+        // ################ INITIALIZE OBJECTS ##################
+        Voucher cashVoucher = new CashVouchers();
+        Voucher chckVoucher = new CheckVoucher();
         BindingSource bs = new BindingSource();
         BindingSource Account = new BindingSource();
-        CheckVouch checkVoucher = new CheckVouch();
-        CashVoucher cashVoucher = new CashVoucher();
-        Voucher petty = new PettyCash();
-        Voucher check = new Check();
-        Voucher cash = new Cash();
-        int x = 0;//Controlling Panel Location
-         
+        //#######################################################
+
         public CreateVoucher()
         {
             InitializeComponent();
         }
-        int noOfVoucher;
+
         private void CreateVoucher_Load(object sender, EventArgs e)
         {
+           
             CreateVoucherClass cv = new CreateVoucherClass();
-            noOfVoucher=Convert.ToInt32(cv.getVoucherCount())+1;
-            
+            Pnl_BodyVoucher.Location = new Point(0, 230);
+            List <Databased> student= new List<Databased>();
+          
             try
             {
                 bs.DataSource = cv.LoadClient();
@@ -55,20 +55,24 @@ namespace AccountingReportsManagement
             {
                 MessageBox.Show(ex.Message);
             }
-            Pnl_BodyVoucher.Location = new Point(0, 230);
+
             if (Pnl_BodyVoucher.Location.X == 0)
             {
                 Btn_PrevButton.Visible = false;
             }
+
         }
 
 
 
+  
+
+
+        //################################# FOR SELECT VOUCHER TYPE PART ##################################
         private void Txt_CheckNum_Enter(object sender, EventArgs e)
         {
             Txt_CheckNum.Text = "";
         }
-
         private void Txt_CheckNum_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -78,43 +82,82 @@ namespace AccountingReportsManagement
             }
         }
 
+        private void Txt_CheckNum_Validated(object sender, EventArgs e)
+        {
+            Lbl_CheckNumber.Text = Txt_CheckNum.Text;
+        }
+        private void Txt_CheckNum_Validating(object sender, CancelEventArgs e)
+        {
+            long parsedValue;
+            if (!long.TryParse(Txt_CheckNum.Text, out parsedValue) || Txt_CheckNum.Text.Length != 10)
+            {
+                Txt_CheckNum.Text = "";
+                Lbl_InvalidCheck.Visible = true;
+            }
+            else
+            {
+                Lbl_InvalidCheck.Visible = false;
+            }
+        }
+        private void Cmb_VoucherTypeSelection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            genVouchNumber();
+        }
+        //##################################################################################################
 
-        //***************** TIMER AND BUTTON *******************//
+
+
+        //################################## TIMER AND NEXT,PREV BUTTON PART ################################
         private void Btn_NextButton_Click(object sender, EventArgs e)
         {
-            Tmr_TransNext.Enabled = true;
+            if (Btn_NextButton.Text == "Close")
+            {
+                this.Close();
+            }
+            else if (Btn_NextButton.Text == "Save")
+            {
+                DialogResult res = MessageBox.Show("Save Voucher and Generate Report?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    Tmr_TransNext.Enabled = true;
+                }
+                else
+                {
+                    Tmr_TransNext.Enabled = false;
+                }
+            }
+            else
+            {
+                Tmr_TransNext.Enabled = true;
+            }
         }
-
         private void Btn_PrevButton_Click(object sender, EventArgs e)
         {
             Tmr_TransPrev.Enabled = true;
         }
-
         private void Tmr_TransNext_Tick(object sender, EventArgs e)
         {
             if (gunaCircleButton4.BaseColor == Color.SeaGreen && Btn_DataVoucher.BaseColor == SystemColors.ControlDark && x > -986)
             {
-                //***************************************************************************************************************//
-                if (Cmb_VoucherTypeSelection.Text == "" || Txt_CheckNum.Text == "Enter Check Number" || Txt_CheckNum.Text == "")
+                if (Cmb_VoucherTypeSelection.Text == "" || Txt_CheckNum.Text == "Enter Check Number" || Txt_CheckNum.Text == "" || Cmb_Currency.Text == "")
                 {
                     Tmr_TransNext.Enabled = false;
                     MessageBox.Show("Please complete required fields.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
-                    x = x - 40;
+                    x -= 40;
                     Pnl_BodyVoucher.Location = new Point(x, 230);
                 }
-                //***************************************************************************************************************//
             }
-            else if (gunaCircleButton4.BaseColor == Color.SeaGreen && Btn_DataVoucher.BaseColor == Color.SeaGreen && x > -1972)
+            else if (gunaCircleButton4.BaseColor == Color.SeaGreen && Btn_DataVoucher.BaseColor == Color.SeaGreen && x > -1972)/////eto aayusin ko ngaun
             {
-                x = x - 40;
+                Tmr_TransNext.Enabled = true;
+                x -= 40;
                 Pnl_BodyVoucher.Location = new Point(x, 230);
             }
             else
             {
-                //*********************************************************************************************************************//
                 if (gunaCircleButton4.BaseColor == Color.SeaGreen && Btn_DataVoucher.BaseColor == SystemColors.ControlDark && x < -986)
                 {
                     Pnl_BodyVoucher.Location = new Point(-986, 230);
@@ -129,6 +172,7 @@ namespace AccountingReportsManagement
                     Lbl_GVoucherType.Font = new Font(this.Font, FontStyle.Regular);
                     Btn_PrevButton.Visible = true;
                     gunaShadowPanel1.Visible = true;
+                    Btn_NextButton.Text = "Save";
                 }
                 else if (gunaCircleButton4.BaseColor == Color.SeaGreen && Btn_DataVoucher.BaseColor == Color.SeaGreen && x < -1972)
                 {
@@ -142,45 +186,29 @@ namespace AccountingReportsManagement
                     Btn_PrevButton.OnHoverBaseColor = Color.MediumSeaGreen;
                     Lbl_GFinalize.Font = new Font(this.Font, FontStyle.Bold);
                     Lbl_GDataVoucher.Font = new Font(this.Font, FontStyle.Regular);
-                    Btn_NextButton.Text = "Save";
-                    GenerateReport();
+                    // Btn_PrevButton.Visible = false;
+                    // gunaShadowPanel1.Visible = false;
+                    Btn_PrevButton.Text = "New Voucher";
+                    Btn_NextButton.Text = "Close";
+                    GenerateReport(Cmb_VoucherTypeSelection.SelectedIndex);
+
                 }
-                //******************************************************************************************************************//
             }
-        }
 
-        
-        private void Cmb_VoucherTypeSelection_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Cmb_VoucherTypeSelection.SelectedIndex == 0)
-            {
-                Pnl_AddCheckVoucher.Dock = DockStyle.Fill;
-                Lbl_CvNumber.Text = "KMPV-" + DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-";
-            }
-            else if (Cmb_VoucherTypeSelection.SelectedIndex == 1)
-            {
-                Pnl_AddCheckVoucher.Dock = DockStyle.Fill;
-                Lbl_CvNumber.Text = "KM-CV-" + DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd") + "01";
-                crystalReportViewer1.ReportSource = cashVoucher;
-            }
-            else if (Cmb_VoucherTypeSelection.SelectedIndex == 2)
-            {
-                Pnl_AddCheckVoucher.Dock = DockStyle.Fill;
-                Lbl_CvNumber.Text = "KM-" + DateTime.Now.ToString("yyyy") + "-" + DateTime.Now.ToString("MM") + "-" + DateTime.Now.ToString("dd") + noOfVoucher.ToString("00");
-                crystalReportViewer1.ReportSource = checkVoucher;
-            }
-        }
-
+        }//
         private void Tmr_TransPrev_Tick(object sender, EventArgs e)
         {
             if (Btn_Finalize.BaseColor == Color.SeaGreen && x < -986)
             {
-                x = x + 40;
+                x += 40;
                 Pnl_BodyVoucher.Location = new Point(x, 230);
+                this.Close();
+                CreateVoucher cv = new CreateVoucher();
+                cv.Show();
             }
             else if (Btn_DataVoucher.BaseColor == Color.SeaGreen && Btn_Finalize.BaseColor == SystemColors.ControlDark && x < 0)
             {
-                x = x + 40;
+                x += 40;
                 Pnl_BodyVoucher.Location = new Point(x, 230);
             }
             else
@@ -215,23 +243,23 @@ namespace AccountingReportsManagement
                         Btn_PrevButton.BaseColor = SystemColors.AppWorkspace;
                         Btn_PrevButton.Visible = false;
                         gunaShadowPanel1.Visible = false;
+                        Btn_NextButton.Text = "Next";
                     }
 
                     Tmr_TransPrev.Enabled = false;
                 }
             }
-        }
+        }//
 
 
-        private void Txt_CheckNum_Validated(object sender, EventArgs e)
-        {
-            Lbl_CheckNumber.Text = Txt_CheckNum.Text;
-        }
 
-        //************************************************************************************************************************************************//
+        //###################################################################################################
 
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        //################################# Code Number Retrieve ############################################
+        private void Cmb_PayableName_SelectedIndexChanged(object sender, EventArgs e)
         {
             CreateVoucherClass cv = new CreateVoucherClass();
             cv.getClient(Cmb_PayableName.Text);
@@ -239,88 +267,18 @@ namespace AccountingReportsManagement
             Cmb_PayableName.Text = Cmb_PayableName.Text.ToString().ToUpper();
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
         private void Cmb_LoadAddAccounts_SelectedIndexChanged(object sender, EventArgs e)
         {
             CreateVoucherClass cv = new CreateVoucherClass();
             cv.getAccounts(Cmb_LoadAddAccounts.Text);
             Txt_AddAccCode.Text = cv.getAccounts(Cmb_LoadAddAccounts.Text);
-           Cmb_LoadAddAccounts.Text = Cmb_LoadAddAccounts.Text.ToString().ToUpper();
+            Cmb_LoadAddAccounts.Text = Cmb_LoadAddAccounts.Text.ToString().ToUpper();
         }
 
-        private void Btn_AddAcctoGrid_Click(object sender, EventArgs e)
-        {
-            DG_AddAccounts.Rows.Add(Cmb_LoadAddAccounts.Text, Txt_AddAccCode.Text,RB_PesoCurrency.Text,Txt_AddDebit.Text,Txt_AddCredit.Text);
-          
-           
-            if (Txt_AddDebit.Text!="") {
-                TextObject accTitle = (TextObject)checkVoucher.ReportDefinition.Sections["DetailSection1"].ReportObjects["Txt_RAccTitle"];
-                accTitle.Text = accTitle.Text + "\n\n" + Cmb_LoadAddAccounts.Text;
-                TextObject accCode = (TextObject)checkVoucher.ReportDefinition.Sections["DetailSection1"].ReportObjects["Txt_RAccCode"];
-                accCode.Text = accCode.Text + "\n\n" + Txt_AddAccCode.Text;
-            }
-            else
-            {
-                TextObject accTitle = (TextObject)checkVoucher.ReportDefinition.Sections["DetailSection1"].ReportObjects["Txt_RAccTitle"];
-                accTitle.Text = accTitle.Text + "\n\n\t\t" + Cmb_LoadAddAccounts.Text;
-                TextObject accCode = (TextObject)checkVoucher.ReportDefinition.Sections["DetailSection1"].ReportObjects["Txt_RAccCode"];
-                accCode.Text = accCode.Text + "\n\n\t\t" + Txt_AddAccCode.Text;
-            }
-            if (RB_ForeignCurrency.Checked == true)
-            {
-                TextObject Fdebit = (TextObject)checkVoucher.ReportDefinition.Sections["DetailSection1"].ReportObjects["Txt_RFDebit"];
-                Fdebit.Text = Fdebit.Text + "\n\n" + "$ " + Txt_AddDebit.Text;
-                TextObject fCredit = (TextObject)checkVoucher.ReportDefinition.Sections["DetailSection1"].ReportObjects["Txt_RFCredit"];
-                fCredit.Text = fCredit.Text + "\n\n" +"$ "+ Txt_AddCredit.Text;
-            }
-            else
-            {
-                TextObject Pdebit = (TextObject)checkVoucher.ReportDefinition.Sections["DetailSection1"].ReportObjects["Txt_RPDebit"];
-                Pdebit.Text = Txt_AddDebit.Text;
-            }
-            NumToWords nw = new NumToWords();
-            string words = nw.ConvertAmount(double.Parse(Txt_AddCredit.Text));
-            TextObject AmountServe = (TextObject)checkVoucher.ReportDefinition.Sections["Section2"].ReportObjects["Txt_Amount"];
-            AmountServe.Text = Txt_AddCredit.Text;
-            TextObject AmountWords = (TextObject)checkVoucher.ReportDefinition.Sections["Section2"].ReportObjects["Txt_AmountToWords"];
-            AmountWords.Text = words;
-            Cmb_LoadAddAccounts.Text = "";
-            Txt_AddAccCode.Text = "";
-            Txt_AddCredit.Text = "";
-            Txt_AddDebit.Text = "";
-            Cmb_LoadAddAccounts.Focus();
-         
-        }
+        //###################################################################################################
 
+
+        //################################ CREDIT OR DEBIT ##################################################
         private void Txt_AddDebit_TextChanged(object sender, EventArgs e)
         {
             if (Txt_AddDebit.Text != "")
@@ -332,7 +290,6 @@ namespace AccountingReportsManagement
                 Txt_AddCredit.Enabled = true;
             }
         }
-
         private void Txt_AddCredit_TextChanged(object sender, EventArgs e)
         {
             if (Txt_AddCredit.Text != "")
@@ -345,97 +302,278 @@ namespace AccountingReportsManagement
             }
         }
 
-       
+        //###################################################################################################
 
 
-      
-  
+
+        //########################################### ADDING VOUCHER CONTENTS INTO TABLE PART ############################################
+
+        private void DG_AddAccounts_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            double debit = 0;
+            double credit = 0;
+            for (int i = 0; i < DG_AddAccounts.Rows.Count; i++)
+            {
+                if (DG_AddAccounts.Rows[i].Cells[3].Value != "")
+                {
+                    debit += Convert.ToDouble(DG_AddAccounts.Rows[i].Cells[3].Value);
+                }
+                if (DG_AddAccounts.Rows[i].Cells[4].Value != "")
+                {
+                    credit += Convert.ToDouble(DG_AddAccounts.Rows[i].Cells[4].Value);
+                }
+               // label1.Text = credit.ToString();
+               // label2.Text = debit.ToString();
+              
+
+                try
+                {
+                   label1.Text = String.Format("{0:n}", double.Parse(credit.ToString()));
+                    label2.Text= String.Format("{0:n}", double.Parse(debit.ToString()));
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+           
+        }
+        //################################################################################################################################
 
 
+
+
+
+
+          
+
+
+
+
+
+
+
+        //------------------------------------------------------------------------------------------------------------------------------------------------
+
+        //########################################### BUTTONS IN FINAL PART ##############################################################
         private void Btn_Pdf_Click(object sender, EventArgs e)
         {
             SaveFileDialog SaveFile = new SaveFileDialog();
             SaveFile.Title = "Export Pdf File";
             SaveFile.DefaultExt = "pdf";
-            SaveFile.InitialDirectory = @"C:\"; 
+            SaveFile.InitialDirectory = @"C:\";
             SaveFile.Filter = "PDF files (*.pdf)|*.pdf|All files (*.*)|*.*";
-          
-            if (SaveFile.ShowDialog()==DialogResult.OK)
+            SaveFile.ShowDialog();
+            if (SaveFile.ShowDialog() == DialogResult.OK)
             {
-               
-                    checkVoucher.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, SaveFile.FileName);
-                
+              //  chckVoucher.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, SaveFile.FileName);
+
             }
-           // checkVoucher.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"D:\Check Voucher.pdf");
+            // checkVoucher.ExportToDisk(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat, @"D:\Check Voucher.pdf");
             //MessageBox.Show("Exported Successful");
         }
+        private void button1_Click(object sender, EventArgs e) => crystalReportViewer1.PrintReport();
+        
 
-        private void button1_Click(object sender, EventArgs e)
+        //################################################################################################################################
+
+
+
+
+
+
+      
+        public void GenerateReport(int selectedOpt)
         {
-            crystalReportViewer1.PrintReport();
+            
+            switch (selectedOpt)
+            {
+                case 0:
+
+                    break;
+                case 1:
+                    for (int i = 0; i < DG_AddAccounts.Rows.Count; i++)
+                    {
+                        if (DG_AddAccounts.Rows[i].Cells[2].Value.ToString() != "₱ - Philippine Peso")
+                        {
+                            if (DG_AddAccounts.Rows[i].Cells[3].Value.ToString() != "")
+                            {
+                                Databased content = new Databased($"insert into voucherpaymentinfos (VoucherGeneratedNumber,AccountTitle,Account_Code,Debit,Credit,Currency,AmountCredit,FDebit,FCredit) values('{Lbl_CvNumber.Text} ','{DG_AddAccounts.Rows[i].Cells[0].Value} ','{DG_AddAccounts.Rows[i].Cells[1].Value} ','','','{DG_AddAccounts.Rows[i].Cells[2].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {Lbl_TotalAmount.Text}','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {DG_AddAccounts.Rows[i].Cells[3].Value}','')");
+
+                            }
+                            else
+                            {
+                                Databased content = new Databased($"insert into voucherpaymentinfos (VoucherGeneratedNumber,AccountTitle,Account_Code,Debit,Credit,Currency,AmountCredit,FDebit,FCredit) values('{Lbl_CvNumber.Text} ','{DG_AddAccounts.Rows[i].Cells[0].Value} ','{DG_AddAccounts.Rows[i].Cells[1].Value} ','','','{DG_AddAccounts.Rows[i].Cells[2].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {Lbl_TotalAmount.Text}','','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {DG_AddAccounts.Rows[i].Cells[4].Value}')");
+
+                            }
+                        }
+                        else
+                        {
+                            if (DG_AddAccounts.Rows[i].Cells[3].Value.ToString() != "")
+                            {
+                                Databased content = new Databased($"insert into voucherpaymentinfos (VoucherGeneratedNumber,AccountTitle,Account_Code,Debit,Credit,Currency,AmountCredit,FDebit,FCredit) values('{Lbl_CvNumber.Text} ','{DG_AddAccounts.Rows[i].Cells[0].Value} ','{DG_AddAccounts.Rows[i].Cells[1].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {DG_AddAccounts.Rows[i].Cells[3].Value}','','{DG_AddAccounts.Rows[i].Cells[2].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {Lbl_TotalAmount.Text}','','')");
+
+                            }
+                            else
+                            {
+                                Databased content = new Databased($"insert into voucherpaymentinfos (VoucherGeneratedNumber,AccountTitle,Account_Code,Debit,Credit,Currency,AmountCredit,FDebit,FCredit) values('{Lbl_CvNumber.Text} ','{DG_AddAccounts.Rows[i].Cells[0].Value} ','{DG_AddAccounts.Rows[i].Cells[1].Value} ','','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {DG_AddAccounts.Rows[i].Cells[4].Value}','{DG_AddAccounts.Rows[i].Cells[2].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {Lbl_TotalAmount.Text}','','')");
+
+                            }
+                        }
+                    }
+                  
+                   
+                    cashVoucher.Info(Cmb_PayableName.Text, Txt_SuppCode.Text, Lbl_CvNumber.Text, Lbl_CheckNumber.Text, Txt_Particular.Text, Txt_Other.Text, Lbl_TotalAmount.Text,gunaDateTimePicker1.Text);
+                    cashVoucher.AddContent(DG_AddAccounts, Cmb_Currency.Text.Substring(0, 1).ToString(),label1.Text,label2.Text);
+                    crystalReportViewer1.ReportSource = cashVoucher.GenerateVoucher();
+                   cashVoucher.SaveVoucher();
+                    break;
+                case 2:
+                    for (int i = 0; i < DG_AddAccounts.Rows.Count; i++)
+                    {
+                        if (DG_AddAccounts.Rows[i].Cells[2].Value.ToString() != "₱ - Philippine Peso")
+                        {
+                            if (DG_AddAccounts.Rows[i].Cells[3].Value.ToString() != "")
+                            {
+                                Databased content = new Databased($"insert into voucherpaymentinfos (VoucherGeneratedNumber,AccountTitle,Account_Code,Debit,Credit,Currency,AmountCredit,FDebit,FCredit) values('{Lbl_CvNumber.Text} ','{DG_AddAccounts.Rows[i].Cells[0].Value} ','{DG_AddAccounts.Rows[i].Cells[1].Value} ','','','{DG_AddAccounts.Rows[i].Cells[2].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {Lbl_TotalAmount.Text}','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {DG_AddAccounts.Rows[i].Cells[3].Value}','')");
+
+                            }
+                            else
+                            {
+                                Databased content = new Databased($"insert into voucherpaymentinfos (VoucherGeneratedNumber,AccountTitle,Account_Code,Debit,Credit,Currency,AmountCredit,FDebit,FCredit) values('{Lbl_CvNumber.Text} ','{DG_AddAccounts.Rows[i].Cells[0].Value} ','{DG_AddAccounts.Rows[i].Cells[1].Value} ','','','{DG_AddAccounts.Rows[i].Cells[2].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {Lbl_TotalAmount.Text}','','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {DG_AddAccounts.Rows[i].Cells[4].Value}')");
+
+                            }
+                        }
+                        else
+                        {
+                            if (DG_AddAccounts.Rows[i].Cells[3].Value.ToString() != "")
+                            {
+                                Databased content = new Databased($"insert into voucherpaymentinfos (VoucherGeneratedNumber,AccountTitle,Account_Code,Debit,Credit,Currency,AmountCredit,FDebit,FCredit) values('{Lbl_CvNumber.Text} ','{DG_AddAccounts.Rows[i].Cells[0].Value} ','{DG_AddAccounts.Rows[i].Cells[1].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {DG_AddAccounts.Rows[i].Cells[3].Value}','','{DG_AddAccounts.Rows[i].Cells[2].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {Lbl_TotalAmount.Text}','','')");
+
+                            }
+                            else
+                            {
+                                Databased content = new Databased($"insert into voucherpaymentinfos (VoucherGeneratedNumber,AccountTitle,Account_Code,Debit,Credit,Currency,AmountCredit,FDebit,FCredit) values('{Lbl_CvNumber.Text} ','{DG_AddAccounts.Rows[i].Cells[0].Value} ','{DG_AddAccounts.Rows[i].Cells[1].Value} ','','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {DG_AddAccounts.Rows[i].Cells[4].Value}','{DG_AddAccounts.Rows[i].Cells[2].Value} ','{DG_AddAccounts.Rows[i].Cells[2].Value.ToString().Substring(0, 1)} {Lbl_TotalAmount.Text}','','')");
+
+                            }
+                        }
+                    }
+                 
+                    chckVoucher.Info(Cmb_PayableName.Text, Txt_SuppCode.Text, Lbl_CvNumber.Text, Lbl_CheckNumber.Text, Txt_Particular.Text, Txt_Other.Text, Lbl_TotalAmount.Text,gunaDateTimePicker1.Text);
+                    chckVoucher.AddContent(DG_AddAccounts, Cmb_Currency.Text.Substring(0, 1).ToString(), label1.Text,label2.Text) ;
+                    crystalReportViewer1.ReportSource = chckVoucher.GenerateVoucher();
+                    chckVoucher.SaveVoucher();
+
+                    break;
+                default:
+                    break;
+            }
+
         }
 
 
-        private void GenerateReport() 
+
+
+
+
+
+
+
+
+
+
+
+
+        private void Btn_AddAcctoGrid_Click(object sender, EventArgs e)
         {
-            TextObject payableName = (TextObject)checkVoucher.ReportDefinition.Sections["Section2"].ReportObjects["Txt_PayableName"];
-            TextObject supplierCode = (TextObject)checkVoucher.ReportDefinition.Sections["Section2"].ReportObjects["Txt_RSupplierCode"];
-            payableName.Text = Cmb_PayableName.Text;
-            supplierCode.Text = Txt_SuppCode.Text;
+            DG_AddAccounts.Rows.Add(Cmb_LoadAddAccounts.Text, Txt_AddAccCode.Text, Cmb_Currency.Text, Txt_AddDebit.Text, Txt_AddCredit.Text);
 
 
-            TextObject particular = (TextObject)checkVoucher.ReportDefinition.Sections["Section2"].ReportObjects["Txt_RParticular"];
-            TextObject checkNo = (TextObject)checkVoucher.ReportDefinition.Sections["Section5"].ReportObjects["Txt_RCheckNo"];
-            TextObject CVNo = (TextObject)checkVoucher.ReportDefinition.Sections["Section5"].ReportObjects["Txt_RCVNo"];
-            TextObject TCVNo = (TextObject)checkVoucher.ReportDefinition.Sections["Section2"].ReportObjects["Txt_CVTop"];
-            particular.Text = Txt_Particu.Text;
-            checkNo.Text = Lbl_CheckNumber.Text;
-            CVNo.Text = Lbl_CvNumber.Text;
-            TCVNo.Text = Lbl_CvNumber.Text;
+            Cmb_LoadAddAccounts.Text = "";
+            Txt_AddAccCode.Text = "";
+            Txt_AddCredit.Text = "";
+            Txt_AddDebit.Text = "";
+            Cmb_LoadAddAccounts.Focus();
+        }
+
+
+
+        private void DG_AddAccounts_Validating(object sender, CancelEventArgs e)
+        {
+       
+           
+                Lbl_TotalAmount.Text = (DG_AddAccounts.Rows.Cast<DataGridViewRow>()
+                .Where(r => Convert.ToBoolean(r.Cells[5].Value).Equals(true))
+                .Sum(t => Convert.ToDouble(t.Cells[4].Value))).ToString();
+            Lbl_TotalAmount.Text = String.Format("{0:n}", double.Parse(Lbl_TotalAmount.Text));
+
+        }
+
+        private void Txt_AddDebit_Validated(object sender, EventArgs e)
+        {
             try
             {
-                //CreateVoucherClass cv = new CreateVoucherClass();
-                //cv.addVoucher("Check Voucher", Lbl_CheckNumber.Text, Lbl_CvNumber.Text, Cmb_PayableName.Text, Txt_SuppCode.Text, Txt_Particu.Text, Txt_other.Text);
-                switch (Cmb_VoucherTypeSelection.SelectedIndex)
-                {
-                    case 0:
-                        petty.PayerInformation(Cmb_PayableName.Text, Txt_SuppCode.Text, Lbl_CvNumber.Text, Lbl_CheckNumber.Text, Txt_Particu.Text, Txt_other.Text);
-                        petty.SaveVoucher();
-                    break;
-                    case 1:
-                       cash.PayerInformation(Cmb_PayableName.Text, Txt_SuppCode.Text, Lbl_CvNumber.Text, Lbl_CheckNumber.Text, Txt_Particu.Text, Txt_other.Text);
-                        cash.SaveVoucher();
-                    break;
-                    case 2:
-                        check.PayerInformation(Cmb_PayableName.Text, Txt_SuppCode.Text, Lbl_CvNumber.Text, Lbl_CheckNumber.Text, Txt_Particu.Text, Txt_other.Text);
-                        check.SaveVoucher();
-                    break; 
-                }
+                Txt_AddDebit.Text = String.Format("{0:n}", double.Parse(Txt_AddDebit.Text));
             }
             catch (Exception ex) 
-            {
-                MessageBox.Show(ex.Message,"");
+            { 
             }
         }
 
-        public string Amount(string amount) 
+        private void Txt_AddCredit_Validated(object sender, EventArgs e)
         {
-            return amount;
-        }
-
-        private void DG_AddAccounts_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            foreach (DataGridViewRow row in DG_AddAccounts.Rows)
+            try
             {
-                bool isSelected = Convert.ToBoolean(Dg_Checkbox.ValueType);
-                if (isSelected)
-                {
-                    gunaLabel16.Text = row.Cells[4].Value.ToString();
-                    
-                }
+                Txt_AddCredit.Text = String.Format("{0:n}", double.Parse(Txt_AddCredit.Text));
             }
+            catch (Exception ex)
+            {
+            }
+
         }
 
-  
+        private void gunaDateTimePicker1_Validated(object sender, EventArgs e)
+        {
+               genVouchNumber();
+        }
+        string[] year;
+        public void genVouchNumber() 
+        {
+            Voucher voucher = new CheckVoucher();
+            if (Cmb_VoucherTypeSelection.SelectedIndex == 0)
+            {
+            
+                year = gunaDateTimePicker1.Text.ToString().Split('-').ToArray();
+                noOfVoucher = Convert.ToInt32(voucher.GetCount("Petty Cash Voucher", year[0].ToString(), year[1]).ToString()) + 1;
+                Pnl_AddCheckVoucher.Dock = DockStyle.Fill;
+
+               
+                Lbl_CvNumber.Text = $"KMPV-{ year[0].ToString()}-{year[1].ToString()}-{noOfVoucher.ToString("0000")}";
+            }
+            else if (Cmb_VoucherTypeSelection.SelectedIndex == 1)
+            {
+               
+                year = gunaDateTimePicker1.Text.ToString().Split('-').ToArray();
+                noOfVoucher = Convert.ToInt32(voucher.GetCount("Cash Voucher", year[0].ToString(), year[1]).ToString()) + 1;
+                Pnl_AddCheckVoucher.Dock = DockStyle.Fill;
+              
+                Lbl_CvNumber.Text = $"KM-CA-{ year[0].ToString()}-{year[1].ToString()}-{noOfVoucher.ToString("0000")}";
+
+            }
+            else if (Cmb_VoucherTypeSelection.SelectedIndex == 2)
+            {
+                DateTime dt = new DateTime();
+               
+             
+                year = gunaDateTimePicker1.Text.ToString().Split('-').ToArray();
+                noOfVoucher = Convert.ToInt32(voucher.GetCount("Check Voucher",year[0].ToString(),year[1]).ToString()) + 1;
+                Pnl_AddCheckVoucher.Dock = DockStyle.Fill;
+
+                
+                Lbl_CvNumber.Text = $"KM-{ year[0].ToString()}-{year[1].ToString()}-{noOfVoucher.ToString("0000")}";
+            }
+
+
+        }
+       
     }
 }

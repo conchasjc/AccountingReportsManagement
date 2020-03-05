@@ -29,23 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle79 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle80 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle81 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle82 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle83 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle84 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle85 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle86 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle87 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle88 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle89 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle90 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Main));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Pcb_Logo = new System.Windows.Forms.PictureBox();
+            this.gunaControlBox2 = new Guna.UI.WinForms.GunaControlBox();
+            this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
             this.Cb_Exit = new Guna.UI.WinForms.GunaControlBox();
             this.Lbl_Name = new System.Windows.Forms.Label();
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
@@ -65,8 +68,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Grid_ViewPayee = new Guna.UI.WinForms.GunaDataGridView();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label21 = new System.Windows.Forms.Label();
+            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.Btn_UpdateAcc = new System.Windows.Forms.Button();
@@ -93,6 +96,8 @@
             this.CmbCategoryAcc = new System.Windows.Forms.ComboBox();
             this.Grid_Accounts = new Guna.UI.WinForms.GunaDataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.Pb_SearchActive = new System.Windows.Forms.PictureBox();
+            this.Pb_SearchInactive = new System.Windows.Forms.PictureBox();
             this.Txt_Search = new Guna.UI.WinForms.GunaTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -111,6 +116,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.Cmb_FClientSupplier = new Guna.UI.WinForms.GunaComboBox();
+            this.Pb_clientSearchOn = new System.Windows.Forms.PictureBox();
+            this.Pb_clientSearchOff = new System.Windows.Forms.PictureBox();
             this.Txt_clientSearch = new Guna.UI.WinForms.GunaTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Btn_UpdateClient = new System.Windows.Forms.Button();
@@ -125,25 +132,23 @@
             this.Grid_Client = new Guna.UI.WinForms.GunaDataGridView();
             this.Pnl_MenuList = new System.Windows.Forms.Panel();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.Pb_MenuBar = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Lbl_CategoryTitle = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.gunaAdvenceTileButton2 = new Guna.UI.WinForms.GunaAdvenceTileButton();
+            this.gunaAdvenceTileButton3 = new Guna.UI.WinForms.GunaAdvenceTileButton();
+            this.gunaAdvenceTileButton1 = new Guna.UI.WinForms.GunaAdvenceTileButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Tmr_MenuTransition = new System.Windows.Forms.Timer(this.components);
             this.Tmr_MenuTransitionClose = new System.Windows.Forms.Timer(this.components);
             this.Pnl_Voucher = new System.Windows.Forms.Panel();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.label20 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Pb_MenuBar = new System.Windows.Forms.PictureBox();
-            this.Pcb_Logo = new System.Windows.Forms.PictureBox();
-            this.gunaAdvenceTileButton3 = new Guna.UI.WinForms.GunaAdvenceTileButton();
-            this.gunaAdvenceTileButton1 = new Guna.UI.WinForms.GunaAdvenceTileButton();
-            this.Pb_SearchActive = new System.Windows.Forms.PictureBox();
-            this.Pb_SearchInactive = new System.Windows.Forms.PictureBox();
-            this.Pb_clientSearchOn = new System.Windows.Forms.PictureBox();
-            this.Pb_clientSearchOff = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pcb_Logo)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.TC_VoucherReports.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -155,28 +160,30 @@
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Accounts)).BeginInit();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchActive)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchInactive)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOff)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Client)).BeginInit();
             this.Pnl_MenuList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_MenuBar)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.Pnl_Voucher.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_MenuBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pcb_Logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchActive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchInactive)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOff)).BeginInit();
+            this.gunaPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(81)))), ((int)(((byte)(146)))));
             this.panel1.Controls.Add(this.Pcb_Logo);
+            this.panel1.Controls.Add(this.gunaControlBox2);
+            this.panel1.Controls.Add(this.gunaControlBox1);
             this.panel1.Controls.Add(this.Cb_Exit);
             this.panel1.Controls.Add(this.Lbl_Name);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -184,6 +191,51 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1337, 35);
             this.panel1.TabIndex = 0;
+            // 
+            // Pcb_Logo
+            // 
+            this.Pcb_Logo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Pcb_Logo.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.kmtioriglogo1;
+            this.Pcb_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pcb_Logo.Location = new System.Drawing.Point(463, 6);
+            this.Pcb_Logo.Name = "Pcb_Logo";
+            this.Pcb_Logo.Size = new System.Drawing.Size(22, 24);
+            this.Pcb_Logo.TabIndex = 3;
+            this.Pcb_Logo.TabStop = false;
+            // 
+            // gunaControlBox2
+            // 
+            this.gunaControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaControlBox2.AnimationHoverSpeed = 0.07F;
+            this.gunaControlBox2.AnimationSpeed = 0.03F;
+            this.gunaControlBox2.ControlBoxTheme = Guna.UI.WinForms.FormControlBoxTheme.Custom;
+            this.gunaControlBox2.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MinimizeBox;
+            this.gunaControlBox2.IconColor = System.Drawing.Color.White;
+            this.gunaControlBox2.IconSize = 15F;
+            this.gunaControlBox2.Location = new System.Drawing.Point(1231, 0);
+            this.gunaControlBox2.Name = "gunaControlBox2";
+            this.gunaControlBox2.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
+            this.gunaControlBox2.OnHoverIconColor = System.Drawing.Color.White;
+            this.gunaControlBox2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaControlBox2.Size = new System.Drawing.Size(35, 35);
+            this.gunaControlBox2.TabIndex = 5;
+            // 
+            // gunaControlBox1
+            // 
+            this.gunaControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaControlBox1.AnimationHoverSpeed = 0.07F;
+            this.gunaControlBox1.AnimationSpeed = 0.03F;
+            this.gunaControlBox1.ControlBoxTheme = Guna.UI.WinForms.FormControlBoxTheme.Custom;
+            this.gunaControlBox1.ControlBoxType = Guna.UI.WinForms.FormControlBoxType.MaximizeBox;
+            this.gunaControlBox1.IconColor = System.Drawing.Color.White;
+            this.gunaControlBox1.IconSize = 15F;
+            this.gunaControlBox1.Location = new System.Drawing.Point(1268, 0);
+            this.gunaControlBox1.Name = "gunaControlBox1";
+            this.gunaControlBox1.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(58)))), ((int)(((byte)(183)))));
+            this.gunaControlBox1.OnHoverIconColor = System.Drawing.Color.White;
+            this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaControlBox1.Size = new System.Drawing.Size(35, 36);
+            this.gunaControlBox1.TabIndex = 4;
             // 
             // Cb_Exit
             // 
@@ -195,13 +247,14 @@
             this.Cb_Exit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Cb_Exit.IconColor = System.Drawing.Color.White;
             this.Cb_Exit.IconSize = 15F;
-            this.Cb_Exit.Location = new System.Drawing.Point(1304, 0);
+            this.Cb_Exit.Location = new System.Drawing.Point(1302, 0);
             this.Cb_Exit.Name = "Cb_Exit";
             this.Cb_Exit.OnHoverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(81)))), ((int)(((byte)(69)))));
             this.Cb_Exit.OnHoverIconColor = System.Drawing.Color.White;
             this.Cb_Exit.OnPressedColor = System.Drawing.Color.Black;
-            this.Cb_Exit.Size = new System.Drawing.Size(33, 35);
+            this.Cb_Exit.Size = new System.Drawing.Size(35, 35);
             this.Cb_Exit.TabIndex = 1;
+            this.Cb_Exit.TextRenderingHint = Guna.UI.WinForms.DrawingTextRenderingHint.AntiAlias;
             // 
             // Lbl_Name
             // 
@@ -295,17 +348,17 @@
             // 
             // Lbl_ClockDisp
             // 
-            this.Lbl_ClockDisp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_ClockDisp.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Lbl_ClockDisp.Font = new System.Drawing.Font("DS-Digital", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_ClockDisp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.Lbl_ClockDisp.Location = new System.Drawing.Point(989, 28);
+            this.Lbl_ClockDisp.Location = new System.Drawing.Point(992, 10);
             this.Lbl_ClockDisp.Name = "Lbl_ClockDisp";
             this.Lbl_ClockDisp.Size = new System.Drawing.Size(246, 56);
             this.Lbl_ClockDisp.TabIndex = 2;
             this.Lbl_ClockDisp.Text = "00:00 AM";
             this.Lbl_ClockDisp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Lbl_ClockDisp.UseCompatibleTextRendering = true;
+            this.Lbl_ClockDisp.Visible = false;
             // 
             // Tmr_ClockTick
             // 
@@ -313,20 +366,21 @@
             // 
             // Lbl_DateDisp
             // 
-            this.Lbl_DateDisp.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Lbl_DateDisp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Lbl_DateDisp.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_DateDisp.ForeColor = System.Drawing.Color.White;
-            this.Lbl_DateDisp.Location = new System.Drawing.Point(765, 74);
+            this.Lbl_DateDisp.Location = new System.Drawing.Point(774, 54);
             this.Lbl_DateDisp.Name = "Lbl_DateDisp";
-            this.Lbl_DateDisp.Size = new System.Drawing.Size(466, 30);
+            this.Lbl_DateDisp.Size = new System.Drawing.Size(464, 30);
             this.Lbl_DateDisp.TabIndex = 3;
             this.Lbl_DateDisp.Text = "MM DD YYYY, DDDD";
             this.Lbl_DateDisp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Lbl_DateDisp.Visible = false;
             // 
             // TC_VoucherReports
             // 
-            this.TC_VoucherReports.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.TC_VoucherReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TC_VoucherReports.Controls.Add(this.tabPage1);
             this.TC_VoucherReports.Controls.Add(this.tabPage2);
@@ -359,47 +413,50 @@
             this.Grid_ViewPayee.AllowUserToDeleteRows = false;
             this.Grid_ViewPayee.AllowUserToResizeColumns = false;
             this.Grid_ViewPayee.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
-            this.Grid_ViewPayee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle76.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
+            this.Grid_ViewPayee.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle76;
+            this.Grid_ViewPayee.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Grid_ViewPayee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Grid_ViewPayee.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.Grid_ViewPayee.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid_ViewPayee.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Grid_ViewPayee.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_ViewPayee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle77.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle77.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_ViewPayee.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle77;
             this.Grid_ViewPayee.ColumnHeadersHeight = 40;
             this.Grid_ViewPayee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_ViewPayee.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle78.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle78.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle78.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle78.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle78.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_ViewPayee.DefaultCellStyle = dataGridViewCellStyle78;
             this.Grid_ViewPayee.EnableHeadersVisualStyles = false;
             this.Grid_ViewPayee.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(222)))), ((int)(((byte)(218)))));
             this.Grid_ViewPayee.Location = new System.Drawing.Point(35, 144);
             this.Grid_ViewPayee.Name = "Grid_ViewPayee";
             this.Grid_ViewPayee.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_ViewPayee.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle79.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle79.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle79.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle79.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle79.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle79.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle79.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_ViewPayee.RowHeadersDefaultCellStyle = dataGridViewCellStyle79;
             this.Grid_ViewPayee.RowHeadersVisible = false;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_ViewPayee.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle80.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_ViewPayee.RowsDefaultCellStyle = dataGridViewCellStyle80;
             this.Grid_ViewPayee.RowTemplate.Height = 21;
             this.Grid_ViewPayee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid_ViewPayee.Size = new System.Drawing.Size(921, 477);
@@ -429,31 +486,43 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.dateTimePicker2);
-            this.groupBox9.Controls.Add(this.dateTimePicker1);
+            this.groupBox9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox9.Controls.Add(this.label21);
+            this.groupBox9.Controls.Add(this.gunaTextBox1);
             this.groupBox9.Location = new System.Drawing.Point(35, 6);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(921, 132);
             this.groupBox9.TabIndex = 3;
             this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "SEARCH VOUCHER";
             // 
-            // dateTimePicker2
+            // label21
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(74, 71);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(111, 25);
-            this.dateTimePicker2.TabIndex = 1;
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(462, 23);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(63, 22);
+            this.label21.TabIndex = 1;
+            this.label21.Text = "label21";
             // 
-            // dateTimePicker1
+            // gunaTextBox1
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(74, 40);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(111, 25);
-            this.dateTimePicker1.TabIndex = 0;
+            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
+            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
+            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaTextBox1.Location = new System.Drawing.Point(20, 65);
+            this.gunaTextBox1.Name = "gunaTextBox1";
+            this.gunaTextBox1.PasswordChar = '\0';
+            this.gunaTextBox1.Size = new System.Drawing.Size(349, 30);
+            this.gunaTextBox1.TabIndex = 0;
+            this.gunaTextBox1.Text = "gunaTextBox1";
+            this.gunaTextBox1.TextChanged += new System.EventHandler(this.gunaTextBox1_TextChanged);
+            this.gunaTextBox1.Validating += new System.ComponentModel.CancelEventHandler(this.gunaTextBox1_Validating);
             // 
             // tabPage2
             // 
@@ -472,6 +541,7 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox8.Controls.Add(this.Btn_UpdateAcc);
             this.groupBox8.Controls.Add(this.label16);
             this.groupBox8.Controls.Add(this.label17);
@@ -482,9 +552,9 @@
             this.groupBox8.Controls.Add(this.Cmb_UpdSubAccCategory);
             this.groupBox8.Controls.Add(this.Cmb_UpdAccCategory);
             this.groupBox8.Font = new System.Drawing.Font("Copperplate Gothic Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(425, 339);
+            this.groupBox8.Location = new System.Drawing.Point(419, 339);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(540, 267);
+            this.groupBox8.Size = new System.Drawing.Size(546, 267);
             this.groupBox8.TabIndex = 17;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Update Account";
@@ -607,6 +677,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox7.Controls.Add(this.label15);
             this.groupBox7.Controls.Add(this.label14);
             this.groupBox7.Controls.Add(this.label13);
@@ -617,9 +688,9 @@
             this.groupBox7.Controls.Add(this.Cmb_AddAccSubCategory);
             this.groupBox7.Controls.Add(this.Cmb_AddAccCategory);
             this.groupBox7.Font = new System.Drawing.Font("Copperplate Gothic Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(425, 78);
+            this.groupBox7.Location = new System.Drawing.Point(419, 78);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(540, 255);
+            this.groupBox7.Size = new System.Drawing.Size(546, 255);
             this.groupBox7.TabIndex = 16;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Add Account";
@@ -741,12 +812,13 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox6.Controls.Add(this.Cmb_SubCategory);
             this.groupBox6.Controls.Add(this.CmbCategoryAcc);
             this.groupBox6.Font = new System.Drawing.Font("Copperplate Gothic Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(419, 9);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(546, 63);
+            this.groupBox6.Size = new System.Drawing.Size(546, 67);
             this.groupBox6.TabIndex = 15;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Filter Accounts";
@@ -756,7 +828,7 @@
             this.Cmb_SubCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.Cmb_SubCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Cmb_SubCategory.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cmb_SubCategory.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.Cmb_SubCategory.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Cmb_SubCategory.FormattingEnabled = true;
             this.Cmb_SubCategory.Location = new System.Drawing.Point(232, 22);
             this.Cmb_SubCategory.Name = "Cmb_SubCategory";
@@ -770,7 +842,7 @@
             this.CmbCategoryAcc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.CmbCategoryAcc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CmbCategoryAcc.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CmbCategoryAcc.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.CmbCategoryAcc.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.CmbCategoryAcc.FormattingEnabled = true;
             this.CmbCategoryAcc.Items.AddRange(new object[] {
             "All Category",
@@ -792,50 +864,53 @@
             this.Grid_Accounts.AllowUserToDeleteRows = false;
             this.Grid_Accounts.AllowUserToResizeColumns = false;
             this.Grid_Accounts.AllowUserToResizeRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
-            this.Grid_Accounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
+            this.Grid_Accounts.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle81;
+            this.Grid_Accounts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Grid_Accounts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Grid_Accounts.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.Grid_Accounts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Grid_Accounts.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Grid_Accounts.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Accounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle82.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle82.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle82.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle82.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle82.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle82.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Accounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle82;
             this.Grid_Accounts.ColumnHeadersHeight = 40;
             this.Grid_Accounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Accounts.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle83.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle83.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle83.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle83.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle83.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Accounts.DefaultCellStyle = dataGridViewCellStyle83;
             this.Grid_Accounts.EnableHeadersVisualStyles = false;
             this.Grid_Accounts.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(222)))), ((int)(((byte)(218)))));
-            this.Grid_Accounts.Location = new System.Drawing.Point(26, 78);
+            this.Grid_Accounts.Location = new System.Drawing.Point(26, 86);
             this.Grid_Accounts.Name = "Grid_Accounts";
             this.Grid_Accounts.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Accounts.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle84.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle84.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle84.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle84.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle84.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Accounts.RowHeadersDefaultCellStyle = dataGridViewCellStyle84;
             this.Grid_Accounts.RowHeadersVisible = false;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Accounts.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle85.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle85.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Accounts.RowsDefaultCellStyle = dataGridViewCellStyle85;
             this.Grid_Accounts.RowTemplate.Height = 21;
             this.Grid_Accounts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Grid_Accounts.Size = new System.Drawing.Size(387, 528);
+            this.Grid_Accounts.Size = new System.Drawing.Size(387, 520);
             this.Grid_Accounts.TabIndex = 0;
             this.Grid_Accounts.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Teal;
             this.Grid_Accounts.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
@@ -864,19 +939,46 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.Pb_SearchActive);
             this.groupBox5.Controls.Add(this.Pb_SearchInactive);
             this.groupBox5.Controls.Add(this.Txt_Search);
             this.groupBox5.Font = new System.Drawing.Font("Copperplate Gothic Light", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(26, 9);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(387, 63);
+            this.groupBox5.Size = new System.Drawing.Size(387, 67);
             this.groupBox5.TabIndex = 13;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Search";
             // 
+            // Pb_SearchActive
+            // 
+            this.Pb_SearchActive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Pb_SearchActive.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton2;
+            this.Pb_SearchActive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pb_SearchActive.Location = new System.Drawing.Point(353, 24);
+            this.Pb_SearchActive.Name = "Pb_SearchActive";
+            this.Pb_SearchActive.Size = new System.Drawing.Size(22, 24);
+            this.Pb_SearchActive.TabIndex = 12;
+            this.Pb_SearchActive.TabStop = false;
+            this.Pb_SearchActive.Visible = false;
+            // 
+            // Pb_SearchInactive
+            // 
+            this.Pb_SearchInactive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Pb_SearchInactive.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton;
+            this.Pb_SearchInactive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pb_SearchInactive.Location = new System.Drawing.Point(353, 24);
+            this.Pb_SearchInactive.Name = "Pb_SearchInactive";
+            this.Pb_SearchInactive.Size = new System.Drawing.Size(22, 24);
+            this.Pb_SearchInactive.TabIndex = 2;
+            this.Pb_SearchInactive.TabStop = false;
+            // 
             // Txt_Search
             // 
+            this.Txt_Search.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_Search.BaseColor = System.Drawing.Color.White;
             this.Txt_Search.BorderColor = System.Drawing.Color.Silver;
             this.Txt_Search.BorderSize = 1;
@@ -911,6 +1013,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Controls.Add(this.Txt_AddClientAddress);
             this.groupBox4.Controls.Add(this.Txt_AddClientTin);
@@ -1077,6 +1180,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
@@ -1092,6 +1197,7 @@
             // 
             // label12
             // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(410, 17);
             this.label12.Name = "label12";
@@ -1112,6 +1218,8 @@
             // 
             // Cmb_FClientSupplier
             // 
+            this.Cmb_FClientSupplier.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Cmb_FClientSupplier.BackColor = System.Drawing.Color.Transparent;
             this.Cmb_FClientSupplier.BaseColor = System.Drawing.Color.White;
             this.Cmb_FClientSupplier.BorderColor = System.Drawing.Color.Silver;
@@ -1133,8 +1241,32 @@
             this.Cmb_FClientSupplier.TabIndex = 0;
             this.Cmb_FClientSupplier.SelectedIndexChanged += new System.EventHandler(this.Cmb_FClientSupplier_SelectedIndexChanged);
             // 
+            // Pb_clientSearchOn
+            // 
+            this.Pb_clientSearchOn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Pb_clientSearchOn.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton2;
+            this.Pb_clientSearchOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pb_clientSearchOn.Location = new System.Drawing.Point(907, 22);
+            this.Pb_clientSearchOn.Name = "Pb_clientSearchOn";
+            this.Pb_clientSearchOn.Size = new System.Drawing.Size(21, 23);
+            this.Pb_clientSearchOn.TabIndex = 14;
+            this.Pb_clientSearchOn.TabStop = false;
+            this.Pb_clientSearchOn.Visible = false;
+            // 
+            // Pb_clientSearchOff
+            // 
+            this.Pb_clientSearchOff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Pb_clientSearchOff.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton;
+            this.Pb_clientSearchOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pb_clientSearchOff.Location = new System.Drawing.Point(907, 22);
+            this.Pb_clientSearchOff.Name = "Pb_clientSearchOff";
+            this.Pb_clientSearchOff.Size = new System.Drawing.Size(21, 23);
+            this.Pb_clientSearchOff.TabIndex = 15;
+            this.Pb_clientSearchOff.TabStop = false;
+            // 
             // Txt_clientSearch
             // 
+            this.Txt_clientSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Txt_clientSearch.BaseColor = System.Drawing.Color.White;
             this.Txt_clientSearch.BorderColor = System.Drawing.Color.Silver;
             this.Txt_clientSearch.BorderSize = 1;
@@ -1156,6 +1288,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.Controls.Add(this.Btn_UpdateClient);
             this.groupBox2.Controls.Add(this.Txt_ClientAdd);
             this.groupBox2.Controls.Add(this.Txt_ClientTin);
@@ -1306,46 +1439,49 @@
             this.Grid_Client.AllowUserToDeleteRows = false;
             this.Grid_Client.AllowUserToResizeColumns = false;
             this.Grid_Client.AllowUserToResizeRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
-            this.Grid_Client.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle86.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(179)))), ((int)(((byte)(223)))), ((int)(((byte)(219)))));
+            this.Grid_Client.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle86;
+            this.Grid_Client.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.Grid_Client.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Grid_Client.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.Grid_Client.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Grid_Client.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.Grid_Client.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Client.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle87.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle87.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle87.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle87.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Client.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle87;
             this.Grid_Client.ColumnHeadersHeight = 40;
             this.Grid_Client.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Grid_Client.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle88.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle88.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(233)))), ((int)(((byte)(231)))));
+            dataGridViewCellStyle88.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle88.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle88.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(185)))), ((int)(((byte)(175)))));
+            dataGridViewCellStyle88.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle88.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Grid_Client.DefaultCellStyle = dataGridViewCellStyle88;
             this.Grid_Client.EnableHeadersVisualStyles = false;
             this.Grid_Client.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(222)))), ((int)(((byte)(218)))));
             this.Grid_Client.Location = new System.Drawing.Point(26, 78);
             this.Grid_Client.Name = "Grid_Client";
             this.Grid_Client.ReadOnly = true;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.Menu;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Client.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle89.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle89.Font = new System.Drawing.Font("Corbel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle89.ForeColor = System.Drawing.SystemColors.Menu;
+            dataGridViewCellStyle89.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle89.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Client.RowHeadersDefaultCellStyle = dataGridViewCellStyle89;
             this.Grid_Client.RowHeadersVisible = false;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Grid_Client.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle90.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Grid_Client.RowsDefaultCellStyle = dataGridViewCellStyle90;
             this.Grid_Client.RowTemplate.Height = 21;
             this.Grid_Client.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Grid_Client.Size = new System.Drawing.Size(387, 542);
@@ -1384,8 +1520,9 @@
             this.Pnl_MenuList.Dock = System.Windows.Forms.DockStyle.Left;
             this.Pnl_MenuList.Location = new System.Drawing.Point(0, 35);
             this.Pnl_MenuList.Name = "Pnl_MenuList";
-            this.Pnl_MenuList.Size = new System.Drawing.Size(55, 891);
+            this.Pnl_MenuList.Size = new System.Drawing.Size(55, 890);
             this.Pnl_MenuList.TabIndex = 5;
+            this.Pnl_MenuList.Visible = false;
             // 
             // gunaElipsePanel1
             // 
@@ -1396,23 +1533,34 @@
             this.gunaElipsePanel1.Size = new System.Drawing.Size(120, 125);
             this.gunaElipsePanel1.TabIndex = 1;
             // 
+            // Pb_MenuBar
+            // 
+            this.Pb_MenuBar.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.barmenu;
+            this.Pb_MenuBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pb_MenuBar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Pb_MenuBar.Location = new System.Drawing.Point(12, 39);
+            this.Pb_MenuBar.Name = "Pb_MenuBar";
+            this.Pb_MenuBar.Size = new System.Drawing.Size(25, 27);
+            this.Pb_MenuBar.TabIndex = 0;
+            this.Pb_MenuBar.TabStop = false;
+            this.Pb_MenuBar.Click += new System.EventHandler(this.Pb_MenuBar_Click);
+            // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.Lbl_CategoryTitle);
             this.panel3.Controls.Add(this.Lbl_DateDisp);
             this.panel3.Controls.Add(this.Lbl_ClockDisp);
-            this.panel3.Location = new System.Drawing.Point(61, 30);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1275, 107);
+            this.panel3.Size = new System.Drawing.Size(1273, 93);
             this.panel3.TabIndex = 6;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel5.Location = new System.Drawing.Point(87, 92);
+            this.panel5.Location = new System.Drawing.Point(61, 71);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(630, 3);
             this.panel5.TabIndex = 5;
@@ -1421,7 +1569,7 @@
             // 
             this.Lbl_CategoryTitle.Font = new System.Drawing.Font("Candara", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lbl_CategoryTitle.ForeColor = System.Drawing.SystemColors.Control;
-            this.Lbl_CategoryTitle.Location = new System.Drawing.Point(79, 39);
+            this.Lbl_CategoryTitle.Location = new System.Drawing.Point(53, 18);
             this.Lbl_CategoryTitle.Name = "Lbl_CategoryTitle";
             this.Lbl_CategoryTitle.Size = new System.Drawing.Size(756, 56);
             this.Lbl_CategoryTitle.TabIndex = 4;
@@ -1429,18 +1577,131 @@
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Controls.Add(this.gunaAdvenceTileButton2);
             this.panel4.Controls.Add(this.gunaAdvenceTileButton3);
             this.panel4.Controls.Add(this.gunaAdvenceTileButton1);
             this.panel4.Controls.Add(this.groupBox1);
-            this.panel4.Location = new System.Drawing.Point(61, 142);
+            this.panel4.Location = new System.Drawing.Point(11, 99);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1272, 743);
+            this.panel4.Size = new System.Drawing.Size(1259, 738);
             this.panel4.TabIndex = 7;
             this.panel4.MouseLeave += new System.EventHandler(this.panel4_MouseLeave);
             // 
+            // gunaAdvenceTileButton2
+            // 
+            this.gunaAdvenceTileButton2.Animated = true;
+            this.gunaAdvenceTileButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceTileButton2.AnimationSpeed = 0.03F;
+            this.gunaAdvenceTileButton2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceTileButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
+            this.gunaAdvenceTileButton2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(160)))), ((int)(((byte)(237)))));
+            this.gunaAdvenceTileButton2.BorderSize = 1;
+            this.gunaAdvenceTileButton2.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceTileButton2.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceTileButton2.CheckedImage")));
+            this.gunaAdvenceTileButton2.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceTileButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaAdvenceTileButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceTileButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceTileButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceTileButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.Image = global::AccountingReportsManagement.Properties.Resources._831108_view_512x512;
+            this.gunaAdvenceTileButton2.ImageSize = new System.Drawing.Size(60, 60);
+            this.gunaAdvenceTileButton2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton2.Location = new System.Drawing.Point(97, 422);
+            this.gunaAdvenceTileButton2.Name = "gunaAdvenceTileButton2";
+            this.gunaAdvenceTileButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(121)))), ((int)(((byte)(216)))));
+            this.gunaAdvenceTileButton2.OnHoverBorderColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton2.OnHoverImage = null;
+            this.gunaAdvenceTileButton2.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton2.Radius = 5;
+            this.gunaAdvenceTileButton2.Size = new System.Drawing.Size(97, 134);
+            this.gunaAdvenceTileButton2.TabIndex = 9;
+            this.gunaAdvenceTileButton2.Text = "View Voucher";
+            // 
+            // gunaAdvenceTileButton3
+            // 
+            this.gunaAdvenceTileButton3.Animated = true;
+            this.gunaAdvenceTileButton3.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceTileButton3.AnimationSpeed = 0.03F;
+            this.gunaAdvenceTileButton3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceTileButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
+            this.gunaAdvenceTileButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(160)))), ((int)(((byte)(237)))));
+            this.gunaAdvenceTileButton3.BorderSize = 1;
+            this.gunaAdvenceTileButton3.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceTileButton3.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton3.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton3.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceTileButton3.CheckedImage")));
+            this.gunaAdvenceTileButton3.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceTileButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaAdvenceTileButton3.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceTileButton3.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceTileButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceTileButton3.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton3.Image = global::AccountingReportsManagement.Properties.Resources.printer1;
+            this.gunaAdvenceTileButton3.ImageSize = new System.Drawing.Size(60, 60);
+            this.gunaAdvenceTileButton3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton3.Location = new System.Drawing.Point(97, 261);
+            this.gunaAdvenceTileButton3.Name = "gunaAdvenceTileButton3";
+            this.gunaAdvenceTileButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(121)))), ((int)(((byte)(216)))));
+            this.gunaAdvenceTileButton3.OnHoverBorderColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton3.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton3.OnHoverImage = null;
+            this.gunaAdvenceTileButton3.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton3.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton3.Radius = 5;
+            this.gunaAdvenceTileButton3.Size = new System.Drawing.Size(97, 134);
+            this.gunaAdvenceTileButton3.TabIndex = 8;
+            this.gunaAdvenceTileButton3.Text = "Print Voucher";
+            // 
+            // gunaAdvenceTileButton1
+            // 
+            this.gunaAdvenceTileButton1.Animated = true;
+            this.gunaAdvenceTileButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceTileButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceTileButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaAdvenceTileButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
+            this.gunaAdvenceTileButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(160)))), ((int)(((byte)(237)))));
+            this.gunaAdvenceTileButton1.BorderSize = 1;
+            this.gunaAdvenceTileButton1.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceTileButton1.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceTileButton1.CheckedImage")));
+            this.gunaAdvenceTileButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaAdvenceTileButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceTileButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceTileButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaAdvenceTileButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton1.Image = global::AccountingReportsManagement.Properties.Resources.icons8_new_ticket_160px;
+            this.gunaAdvenceTileButton1.ImageSize = new System.Drawing.Size(60, 60);
+            this.gunaAdvenceTileButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(97, 104);
+            this.gunaAdvenceTileButton1.Name = "gunaAdvenceTileButton1";
+            this.gunaAdvenceTileButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(121)))), ((int)(((byte)(216)))));
+            this.gunaAdvenceTileButton1.OnHoverBorderColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceTileButton1.OnHoverImage = null;
+            this.gunaAdvenceTileButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceTileButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceTileButton1.Radius = 5;
+            this.gunaAdvenceTileButton1.Size = new System.Drawing.Size(97, 134);
+            this.gunaAdvenceTileButton1.TabIndex = 6;
+            this.gunaAdvenceTileButton1.Text = "Create Voucher";
+            this.gunaAdvenceTileButton1.UseTransfarantBackground = true;
+            this.gunaAdvenceTileButton1.Click += new System.EventHandler(this.gunaAdvenceTileButton1_Click);
+            // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.TC_VoucherReports);
             this.groupBox1.Location = new System.Drawing.Point(218, 3);
             this.groupBox1.Name = "groupBox1";
@@ -1460,21 +1721,35 @@
             // 
             // Pnl_Voucher
             // 
-            this.Pnl_Voucher.Controls.Add(this.label20);
+            this.Pnl_Voucher.Controls.Add(this.gunaPanel1);
             this.Pnl_Voucher.Controls.Add(this.panel2);
-            this.Pnl_Voucher.Controls.Add(this.panel3);
-            this.Pnl_Voucher.Controls.Add(this.panel4);
             this.Pnl_Voucher.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Pnl_Voucher.Location = new System.Drawing.Point(0, 0);
+            this.Pnl_Voucher.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.Pnl_Voucher.MinimumSize = new System.Drawing.Size(1337, 926);
             this.Pnl_Voucher.Name = "Pnl_Voucher";
             this.Pnl_Voucher.Size = new System.Drawing.Size(1337, 926);
             this.Pnl_Voucher.TabIndex = 8;
             // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaPanel1.Controls.Add(this.panel3);
+            this.gunaPanel1.Controls.Add(this.label20);
+            this.gunaPanel1.Controls.Add(this.panel4);
+            this.gunaPanel1.Location = new System.Drawing.Point(61, 64);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(1273, 862);
+            this.gunaPanel1.TabIndex = 10;
+            // 
             // label20
             // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label20.Location = new System.Drawing.Point(70, 904);
+            this.label20.Location = new System.Drawing.Point(912, 840);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(330, 13);
             this.label20.TabIndex = 9;
@@ -1488,144 +1763,12 @@
             this.panel2.Size = new System.Drawing.Size(1337, 33);
             this.panel2.TabIndex = 8;
             // 
-            // Pb_MenuBar
-            // 
-            this.Pb_MenuBar.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.barmenu;
-            this.Pb_MenuBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pb_MenuBar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Pb_MenuBar.Location = new System.Drawing.Point(12, 39);
-            this.Pb_MenuBar.Name = "Pb_MenuBar";
-            this.Pb_MenuBar.Size = new System.Drawing.Size(25, 27);
-            this.Pb_MenuBar.TabIndex = 0;
-            this.Pb_MenuBar.TabStop = false;
-            this.Pb_MenuBar.Click += new System.EventHandler(this.Pb_MenuBar_Click);
-            // 
-            // Pcb_Logo
-            // 
-            this.Pcb_Logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Pcb_Logo.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.kmtioriglogo1;
-            this.Pcb_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pcb_Logo.Location = new System.Drawing.Point(464, 7);
-            this.Pcb_Logo.Name = "Pcb_Logo";
-            this.Pcb_Logo.Size = new System.Drawing.Size(22, 24);
-            this.Pcb_Logo.TabIndex = 3;
-            this.Pcb_Logo.TabStop = false;
-            // 
-            // gunaAdvenceTileButton3
-            // 
-            this.gunaAdvenceTileButton3.Animated = true;
-            this.gunaAdvenceTileButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceTileButton3.AnimationSpeed = 0.03F;
-            this.gunaAdvenceTileButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
-            this.gunaAdvenceTileButton3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(160)))), ((int)(((byte)(237)))));
-            this.gunaAdvenceTileButton3.BorderSize = 1;
-            this.gunaAdvenceTileButton3.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceTileButton3.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton3.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton3.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceTileButton3.CheckedImage")));
-            this.gunaAdvenceTileButton3.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceTileButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceTileButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceTileButton3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceTileButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton3.Image = global::AccountingReportsManagement.Properties.Resources.printer;
-            this.gunaAdvenceTileButton3.ImageSize = new System.Drawing.Size(60, 60);
-            this.gunaAdvenceTileButton3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton3.Location = new System.Drawing.Point(97, 261);
-            this.gunaAdvenceTileButton3.Name = "gunaAdvenceTileButton3";
-            this.gunaAdvenceTileButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(121)))), ((int)(((byte)(216)))));
-            this.gunaAdvenceTileButton3.OnHoverBorderColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton3.OnHoverImage = null;
-            this.gunaAdvenceTileButton3.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton3.Size = new System.Drawing.Size(97, 134);
-            this.gunaAdvenceTileButton3.TabIndex = 8;
-            this.gunaAdvenceTileButton3.Text = "Print Voucher";
-            // 
-            // gunaAdvenceTileButton1
-            // 
-            this.gunaAdvenceTileButton1.Animated = true;
-            this.gunaAdvenceTileButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceTileButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceTileButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaAdvenceTileButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
-            this.gunaAdvenceTileButton1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(91)))), ((int)(((byte)(160)))), ((int)(((byte)(237)))));
-            this.gunaAdvenceTileButton1.BorderSize = 1;
-            this.gunaAdvenceTileButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceTileButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceTileButton1.CheckedImage")));
-            this.gunaAdvenceTileButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceTileButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceTileButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceTileButton1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaAdvenceTileButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton1.Image = global::AccountingReportsManagement.Properties.Resources.icons8_new_ticket_160px;
-            this.gunaAdvenceTileButton1.ImageSize = new System.Drawing.Size(60, 60);
-            this.gunaAdvenceTileButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton1.Location = new System.Drawing.Point(97, 104);
-            this.gunaAdvenceTileButton1.Name = "gunaAdvenceTileButton1";
-            this.gunaAdvenceTileButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(121)))), ((int)(((byte)(216)))));
-            this.gunaAdvenceTileButton1.OnHoverBorderColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceTileButton1.OnHoverImage = null;
-            this.gunaAdvenceTileButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceTileButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceTileButton1.Size = new System.Drawing.Size(97, 134);
-            this.gunaAdvenceTileButton1.TabIndex = 6;
-            this.gunaAdvenceTileButton1.Text = "Create Voucher";
-            this.gunaAdvenceTileButton1.UseTransfarantBackground = true;
-            this.gunaAdvenceTileButton1.Click += new System.EventHandler(this.gunaAdvenceTileButton1_Click);
-            // 
-            // Pb_SearchActive
-            // 
-            this.Pb_SearchActive.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton2;
-            this.Pb_SearchActive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pb_SearchActive.Location = new System.Drawing.Point(353, 24);
-            this.Pb_SearchActive.Name = "Pb_SearchActive";
-            this.Pb_SearchActive.Size = new System.Drawing.Size(22, 24);
-            this.Pb_SearchActive.TabIndex = 12;
-            this.Pb_SearchActive.TabStop = false;
-            this.Pb_SearchActive.Visible = false;
-            // 
-            // Pb_SearchInactive
-            // 
-            this.Pb_SearchInactive.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton;
-            this.Pb_SearchInactive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pb_SearchInactive.Location = new System.Drawing.Point(353, 24);
-            this.Pb_SearchInactive.Name = "Pb_SearchInactive";
-            this.Pb_SearchInactive.Size = new System.Drawing.Size(22, 24);
-            this.Pb_SearchInactive.TabIndex = 2;
-            this.Pb_SearchInactive.TabStop = false;
-            // 
-            // Pb_clientSearchOn
-            // 
-            this.Pb_clientSearchOn.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton2;
-            this.Pb_clientSearchOn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pb_clientSearchOn.Location = new System.Drawing.Point(907, 22);
-            this.Pb_clientSearchOn.Name = "Pb_clientSearchOn";
-            this.Pb_clientSearchOn.Size = new System.Drawing.Size(21, 23);
-            this.Pb_clientSearchOn.TabIndex = 14;
-            this.Pb_clientSearchOn.TabStop = false;
-            this.Pb_clientSearchOn.Visible = false;
-            // 
-            // Pb_clientSearchOff
-            // 
-            this.Pb_clientSearchOff.BackgroundImage = global::AccountingReportsManagement.Properties.Resources.searchButton;
-            this.Pb_clientSearchOff.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Pb_clientSearchOff.Location = new System.Drawing.Point(907, 22);
-            this.Pb_clientSearchOff.Name = "Pb_clientSearchOff";
-            this.Pb_clientSearchOff.Size = new System.Drawing.Size(21, 23);
-            this.Pb_clientSearchOff.TabIndex = 15;
-            this.Pb_clientSearchOff.TabStop = false;
-            // 
             // Frm_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(52)))), ((int)(((byte)(96)))));
-            this.ClientSize = new System.Drawing.Size(1337, 926);
+            this.ClientSize = new System.Drawing.Size(1337, 925);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.Pnl_MenuList);
             this.Controls.Add(this.panel1);
@@ -1633,41 +1776,44 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(1309, 0);
+            this.MaximumSize = new System.Drawing.Size(1920, 1080);
+            this.MinimumSize = new System.Drawing.Size(1337, 925);
             this.Name = "Frm_Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Form";
             this.Load += new System.EventHandler(this.Frm_Main_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Pcb_Logo)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.TC_VoucherReports.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grid_ViewPayee)).EndInit();
             this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Accounts)).EndInit();
             this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchActive)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchInactive)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOff)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grid_Client)).EndInit();
             this.Pnl_MenuList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Pb_MenuBar)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.Pnl_Voucher.ResumeLayout(false);
-            this.Pnl_Voucher.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_MenuBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pcb_Logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchActive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_SearchInactive)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Pb_clientSearchOff)).EndInit();
+            this.gunaPanel1.ResumeLayout(false);
+            this.gunaPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1768,9 +1914,13 @@
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton1;
         private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton3;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private Guna.UI.WinForms.GunaDataGridView Grid_ViewPayee;
         private System.Windows.Forms.TabPage tabPage1;
+        private Guna.UI.WinForms.GunaAdvenceTileButton gunaAdvenceTileButton2;
+        private Guna.UI.WinForms.GunaControlBox gunaControlBox1;
+        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private Guna.UI.WinForms.GunaControlBox gunaControlBox2;
+        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private System.Windows.Forms.Label label21;
     }
 }

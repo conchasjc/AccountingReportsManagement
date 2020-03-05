@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CreateVoucherDataSet" targetNamespace="http://tempuri.org/CreateVoucherDataSet.xsd" xmlns:mstns="http://tempuri.org/CreateVoucherDataSet.xsd" xmlns="http://tempuri.org/CreateVoucherDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CreateVoucherDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CreateVoucherDataSet" msprop:Generator_UserDSName="CreateVoucherDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="addVoucher" msprop:Generator_TableClassName="addVoucherDataTable" msprop:Generator_TableVarName="tableaddVoucher" msprop:Generator_TablePropName="addVoucher" msprop:Generator_RowDeletingName="addVoucherRowDeleting" msprop:Generator_RowChangingName="addVoucherRowChanging" msprop:Generator_RowEvHandlerName="addVoucherRowChangeEventHandler" msprop:Generator_RowDeletedName="addVoucherRowDeleted" msprop:Generator_UserTableName="addVoucher" msprop:Generator_RowChangedName="addVoucherRowChanged" msprop:Generator_RowEvArgName="addVoucherRowChangeEvent" msprop:Generator_RowClassName="addVoucherRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Account_x0020_Title" msprop:Generator_ColumnVarNameInTable="columnAccount_Title" msprop:Generator_ColumnPropNameInRow="Account_Title" msprop:Generator_ColumnPropNameInTable="Account_TitleColumn" msprop:Generator_UserColumnName="Account Title" type="xs:string" minOccurs="0" />
+              <xs:element name="Account_x0020_Code" msprop:Generator_ColumnVarNameInTable="columnAccount_Code" msprop:Generator_ColumnPropNameInRow="Account_Code" msprop:Generator_ColumnPropNameInTable="Account_CodeColumn" msprop:Generator_UserColumnName="Account Code" type="xs:string" minOccurs="0" />
+              <xs:element name="Debit" msprop:Generator_ColumnVarNameInTable="columnDebit" msprop:Generator_ColumnPropNameInRow="Debit" msprop:Generator_ColumnPropNameInTable="DebitColumn" msprop:Generator_UserColumnName="Debit" type="xs:string" minOccurs="0" />
+              <xs:element name="Credit" msprop:Generator_ColumnVarNameInTable="columnCredit" msprop:Generator_ColumnPropNameInRow="Credit" msprop:Generator_ColumnPropNameInTable="CreditColumn" msprop:Generator_UserColumnName="Credit" type="xs:string" minOccurs="0" />
+              <xs:element name="Foreign_x0020_Debit" msprop:Generator_ColumnVarNameInTable="columnForeign_Debit" msprop:Generator_ColumnPropNameInRow="Foreign_Debit" msprop:Generator_ColumnPropNameInTable="Foreign_DebitColumn" msprop:Generator_UserColumnName="Foreign Debit" type="xs:string" minOccurs="0" />
+              <xs:element name="Foreign_x0020_Credit" msprop:Generator_ColumnVarNameInTable="columnForeign_Credit" msprop:Generator_ColumnPropNameInRow="Foreign_Credit" msprop:Generator_ColumnPropNameInTable="Foreign_CreditColumn" msprop:Generator_UserColumnName="Foreign Credit" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

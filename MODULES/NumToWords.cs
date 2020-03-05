@@ -8,14 +8,25 @@ namespace AccountingReportsManagement.MODULES
 {
     class NumToWords
     {
-        private static String[] units = { "Zero", "One", "Two", "Three",
-    "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
-    "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen",
-    "Seventeen", "Eighteen", "Nineteen" };
-        private static String[] tens = { "", "", "Twenty", "Thirty", "Forty",
-    "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
+        private static String[] units = 
+        {
+            "Zero", "One", "Two", "Three",
+            "Four", "Five", "Six", "Seven", 
+            "Eight", "Nine", "Ten", "Eleven",
+            "Twelve", "Thirteen", "Fourteen", 
+            "Fifteen", "Sixteen", "Seventeen", 
+            "Eighteen", "Nineteen" 
+        };
 
-        public String ConvertAmount(double amount)
+        private static String[] tens = 
+        {
+            "", "", "Twenty", "Thirty", 
+            "Forty", "Fifty", "Sixty", 
+            "Seventy", "Eighty", "Ninety" 
+        };
+
+        private static String[] currency = {"Pesos","Yen","Dollar" };
+        public String ConvertAmount(double amount, string currencyText)
         {
             try
             {
@@ -23,11 +34,11 @@ namespace AccountingReportsManagement.MODULES
                 Int64 amount_dec = (Int64)Math.Round((amount - (double)(amount_int)) * 100);
                 if (amount_dec == 0)
                 {
-                    return Convert(amount_int) + " Only.";
+                    return Convert(amount_int) + $" {currencyText} Only.";
                 }
                 else
                 {
-                    return Convert(amount_int) + " Point " + Convert(amount_dec) + " Only.";
+                    return Convert(amount_int) + " Point " + Convert(amount_dec) + $" {currencyText} Only.";
                 }
             }
             catch (Exception e)
