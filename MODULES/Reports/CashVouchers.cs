@@ -83,10 +83,9 @@ namespace AccountingReportsManagement.MODULES.Reports
             TextObject AmountWords = (TextObject)cashVoucher.ReportDefinition.Sections["Section2"].ReportObjects["Txt_AmountToWords"];
             tDebits = $"{currencySymbol} {debitTotal}";
             tCredits = $"{currencySymbol} {creditTotal}";
-
+            TextObject fdebit = (TextObject)cashVoucher.ReportDefinition.Sections["Section5"].ReportObjects["Txt_TFDebit"];
+            TextObject fcredit = (TextObject)cashVoucher.ReportDefinition.Sections["Section5"].ReportObjects["Txt_TFCredit"];
             words = convertNumber.ConvertAmount(double.Parse(this.TotalCreditAmount), "Pesos");
-            debit.Text = $"{currencySymbol} {debitTotal}";
-            credit.Text = $"{currencySymbol} {creditTotal}";
             string currencyShrt;
 
 
@@ -97,17 +96,60 @@ namespace AccountingReportsManagement.MODULES.Reports
             {
                 words = convertNumber.ConvertAmount(double.Parse(this.TotalCreditAmount), "Peso");
                 currencyShrt = "₱";
+
+                debit.Text = $"{currencySymbol} {debitTotal}";
+                credit.Text = $"{currencySymbol} {creditTotal}";
+                foreach (DataGridViewRow item in Table.Rows)
+                {
+                    if (item.Cells[3].Value == "")
+                    {
+                        cvds.addVoucher.Rows.Add(Indent(item.Cells[0].Value.ToString(), 10), "\t      " + item.Cells[1].Value, item.Cells[3].Value, $"{currencySymbol}  {item.Cells[4].Value}", "", "");
+                    }
+                    else
+                    {
+                        cvds.addVoucher.Rows.Add(item.Cells[0].Value, item.Cells[1].Value, $"{currencySymbol} {item.Cells[3].Value}", item.Cells[4].Value, "", "");
+                    }
+                }
             }
             else if (currencySymbol.ToString() == "$")
             {
                 words = convertNumber.ConvertAmount(double.Parse(this.TotalCreditAmount), "Dollar");
                 currencyShrt = "$";
+                fdebit.Text = $"{currencySymbol} {debitTotal}";
+                fcredit.Text = $"{currencySymbol} {creditTotal}";
+                foreach (DataGridViewRow item in Table.Rows)
+                {
+                    if (item.Cells[3].Value == "")
+                    {
+                        cvds.addVoucher.Rows.Add(Indent(item.Cells[0].Value.ToString(), 10), "\t      " + item.Cells[1].Value, " ", " ", item.Cells[3].Value, $"{currencySymbol}  {item.Cells[4].Value}");
+                    }
+                    else
+                    {
+                        cvds.addVoucher.Rows.Add(item.Cells[0].Value, item.Cells[1].Value, " ", " ", $"{currencySymbol} {item.Cells[3].Value}", item.Cells[4].Value);
+                    }
+
+                }
             }
             else
             {
                 words = convertNumber.ConvertAmount(double.Parse(this.TotalCreditAmount), "Yen");
                 currencyShrt = "¥";
+                fdebit.Text = $"{currencySymbol} {debitTotal}";
+                fcredit.Text = $"{currencySymbol} {creditTotal}";
+                foreach (DataGridViewRow item in Table.Rows)
+                {
+                    if (item.Cells[3].Value == "")
+                    {
+                        cvds.addVoucher.Rows.Add(Indent(item.Cells[0].Value.ToString(), 10), "\t      " + item.Cells[1].Value, " ", " ", item.Cells[3].Value, $"{currencySymbol}  {item.Cells[4].Value}");
+                    }
+                    else
+                    {
+                        cvds.addVoucher.Rows.Add(item.Cells[0].Value, item.Cells[1].Value, " ", " ", $"{currencySymbol} {item.Cells[3].Value}", item.Cells[4].Value);
+                    }
+                }
+
             }
+
 
 
             if (this.TotalCreditAmount != "0")
@@ -122,17 +164,7 @@ namespace AccountingReportsManagement.MODULES.Reports
                 AmountWords.Text = " ";
             }
 
-            foreach (DataGridViewRow item in Table.Rows)
-            {
-                if (item.Cells[3].Value == "")
-                {
-                    cvds.addVoucher.Rows.Add(Indent(item.Cells[0].Value.ToString(), 10), "\t      " + item.Cells[1].Value, item.Cells[3].Value, $"{currencySymbol}  {item.Cells[4].Value}", "", "");
-                }
-                else
-                {
-                    cvds.addVoucher.Rows.Add(item.Cells[0].Value, item.Cells[1].Value, $"{currencySymbol} {item.Cells[3].Value}", item.Cells[4].Value, "", "");
-                }
-            }
+         
 
             cashVoucher.SetDataSource(cvds);
         }

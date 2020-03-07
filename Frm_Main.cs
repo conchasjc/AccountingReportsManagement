@@ -1,4 +1,5 @@
 ﻿using AccountingReportsManagement.MODULES;
+using AccountingReportsManagement.MODULES.VoucherPreviewModule;
 using System;
 using System.Data;
 using System.Drawing;
@@ -299,6 +300,7 @@ namespace AccountingReportsManagement
             Txt_Search.ForeColor = SystemColors.ControlText;
             Pb_SearchActive.Visible = true;
             Pb_SearchInactive.Visible = false;
+            
         }
 
         private void Txt_Search_Leave(object sender, EventArgs e)

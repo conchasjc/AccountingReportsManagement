@@ -238,7 +238,7 @@
             this.Pnl_BodyVoucher.Controls.Add(this.panel2);
             this.Pnl_BodyVoucher.Controls.Add(this.Pnl_DataVoucher);
             this.Pnl_BodyVoucher.Controls.Add(this.Cmb_VoucherTypeSelection);
-            this.Pnl_BodyVoucher.Location = new System.Drawing.Point(0, 229);
+            this.Pnl_BodyVoucher.Location = new System.Drawing.Point(-986, 229);
             this.Pnl_BodyVoucher.Name = "Pnl_BodyVoucher";
             this.Pnl_BodyVoucher.Size = new System.Drawing.Size(2958, 668);
             this.Pnl_BodyVoucher.TabIndex = 7;
@@ -1125,7 +1125,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(568, 926);
+            this.label1.Location = new System.Drawing.Point(551, 926);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 13);
             this.label1.TabIndex = 18;

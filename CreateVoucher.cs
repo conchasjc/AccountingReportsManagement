@@ -35,7 +35,7 @@ namespace AccountingReportsManagement
             CreateVoucherClass cv = new CreateVoucherClass();
             Pnl_BodyVoucher.Location = new Point(0, 230);
             List <Databased> student= new List<Databased>();
-          
+            gunaDateTimePicker1.Value = System.DateTime.Today;
             try
             {
                 bs.DataSource = cv.LoadClient();
